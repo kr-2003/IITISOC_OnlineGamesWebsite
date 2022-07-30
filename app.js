@@ -31,7 +31,12 @@ let userMap = undefined;
 const dbUrl = process.env.DB_URL;
 
 mongoose
-  .connect(dbUrl)
+  .connect(dbUrl, {
+    useNewUrlParser: true,
+    // useCreateIndex: true,
+    useUnifiedTopology: true,
+    // useFindAndModify: false,
+  })
   .then(() => {
     console.log("Mongo Connection done");
   })

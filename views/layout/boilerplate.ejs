@@ -70,23 +70,23 @@
                     <li class="nav-item nav-links diff">
                       <a class="nav-link" href="contact.html">Contact</a>
                     </li>
-                    
+                    <% if(!currentUser) {%>
                       <li class="nav-item nav-links login">
                         <a href="/login" class="btn_1 d-sm-block">Login</a>
                       </li>
                       <li class="nav-item nav-links login signup">
                         <a href="/register" class="btn_1 d-sm-block">Sign Up</a>
                       </li>
-
-                      <!-- <div style="color: white">
+                      <% } else { %>
+                      <div style="color: white">
                         <li class="nav-item nav-links login">
-                          <a href="/users/" class="btn_1 d-sm-block">Hi!, </a>
+                          <a href="/users/<%=currentUser._id%>" class="btn_1 d-sm-block">Hi!, <%= currentUser.username %></a>
                         </li>
                         <li class="nav-item nav-links login signup">
                           <a href="/logout" class="btn_1 d-sm-block">Logout</a>
                         </li>
-                      </div> -->
-
+                      </div>
+                      <% } %>
                     
                   </ul>
                 </div>
