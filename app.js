@@ -239,14 +239,14 @@ io.sockets.on("connection", function (socket) {
             if (winner.winner == 1) {
               history(
                 "won",
-                "tictactoe",
+                "Tic Tac Toe",
                 game.player1Username,
                 game.player2Username
               );
             } else {
               history(
                 "won",
-                "tictactoe",
+              "Tic Tac Toe",
                 game.player2Username,
                 game.player1Username
               );
@@ -260,7 +260,7 @@ io.sockets.on("connection", function (socket) {
             io.to(socket.room).emit("draw");
             history(
               "draw",
-              "tictactoe",
+              "Tic Tac Toe",
               game.player1Username,
               game.player2Username
             );
@@ -355,14 +355,14 @@ io.sockets.on("connection", function (socket) {
             if (winner.winner == 1) {
               history(
                 "won",
-                "connect4",
+                "Connect 4",
                 game.player1Username,
                 game.player2Username
               );
             } else {
               history(
                 "won",
-                "connect4",
+                "Connect 4",
                 game.player2Username,
                 game.player1Username
               );
@@ -372,7 +372,7 @@ io.sockets.on("connection", function (socket) {
             io.to(socket.room).emit("draw");
             history(
               "draw",
-              "connect4",
+              "Connect 4",
               game.player1Username,
               game.player2Username
             );
