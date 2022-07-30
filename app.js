@@ -1,3 +1,4 @@
+import "dotenv/config";
 import express from "express";
 import { rmSync } from "fs";
 let app = express();
@@ -6,6 +7,7 @@ import path from "path";
 const __dirname = path.resolve();
 import methodOverride from "method-override";
 import session from "express-session";
+import MongoStore from "connect-mongo";
 import flash from "connect-flash";
 import passport from "passport";
 import LocalStrategy from "passport-local";
@@ -26,9 +28,10 @@ import c4_game_logic from "./gamelogics/c4_game_logic.js";
 import dab_game_logic from "./gamelogics/dab_game_logic.js";
 let gameMap = {};
 let userMap = undefined;
+const dbUrl = process.env.DB_URL;
 
 mongoose
-  .connect("mongodb://localhost:27017/onlineGames")
+  .connect(dbUrl)
   .then(() => {
     console.log("Mongo Connection done");
   })
@@ -37,7 +40,18 @@ mongoose
     console.log(err);
   });
 
+const store = new MongoStore({
+  mongoUrl: dbUrl,
+  secret: "thisshouldbebettersecret",
+  touchAfter: 24 * 3600,
+});
+
+store.on("error", function (e) {
+  console.log("SESSION STORE ERROR", e);
+});
+
 const sessionConfig = {
+  store,
   secret: "thisshouldbebettersecret",
   resave: false,
   saveUninitialized: true,
@@ -696,14 +710,14 @@ const history = async (status, game, winner, loser) => {
   console.log(status, game, winner, loser);
   const player1 = await User.findOne({ username: winner.toString() });
   const player2 = await User.findOne({ username: loser.toString() });
-  player1.history.push({
+  player1.history.unshift({
     game: game,
     status: status,
     winner: winner,
     loser: loser,
   });
   await player1.save();
-  player2.history.push({
+  player2.history.unshift({
     game: game,
     status: status,
     winner: winner,
