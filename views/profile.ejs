@@ -1,10 +1,10 @@
 <% layout('layout/boilerplate.ejs') %>
 
-<section style="background-color: #eee">
+<section style="background-color: #0C1B26">
 
     <div class="row">
       <div class="col-lg-4">
-        <div class="card mb-4">
+        <div class="card carded mb-4">
           <div class="card-body text-center">
             <img
               src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-chat/ava3.webp"
@@ -22,24 +22,24 @@
 
                 <% } else{ %>
                   <button type="button" class="btn btn-primary"><a style = "color: white;" href="/users/<%=user._id%>/follow">Follow</a></button>
-  
+
                 <% } %> <% } %>
-  
-              
-              <button type="button" class="btn btn-outline-primary ms-1">
+
+
+              <button type="button" style="background-color: linear-gradient(to right, #B983FF 0%, #8A39E1 51%, #7A0BC0 100%);" class="btn btn-outline-primary ms-1">
                 Message
               </button>
             </div>
           </div>
         </div>
-        
-        <div class="card mb-4 mb-lg-0">
+
+        <div class="card cardio mb-4 mb-lg-0">
           <div class="card-body p-0">
-            <h3 style="display: inline-block;">
-                Followers 
+            <h3 class="heyy" style="text-align: center;" style="display: inline-block;">
+                <span style="color: #8A39E1;">FOLLOW</span>ERS
               </h3>
             <ul class="list-group list-group-flush rounded-3">
-             
+
                 <% for(let follower of user.followers){ %>
               <li
                 class="list-group-item d-flex justify-content-between align-items-center p-3"
@@ -47,8 +47,8 @@
               <a class="mb-0" href="/users/<%= follower._id %> "><%= follower.username %> </a>
 
               </li>
-              <% } %> 
-             
+              <% } %>
+
             </ul>
           </div>
         </div>
@@ -57,6 +57,7 @@
         <div class="card mb-4">
           <div class="card-body">
             <div class="row">
+              <h2  class="heyy">DE<span style="color: #8A39E1;">TAILS</span></h2>
               <div class="col-sm-3">
                 <p class="mb-0">Full Name</p>
               </div>
@@ -113,18 +114,18 @@
         </div>
         <div style= "min-height: 150px; overflow: hidden;" class="row">
           <div style= "min-height: 150px; overflow: hidden;" class="col-md-12">
-            <div style= "min-height: 150px; overflow: hidden;" class="card mb-4 mb-md-0">
+            <div style= "min-height: 150px; overflow: hidden;" class="card carding mb-4 mb-md-0">
 
-                <h3 class="mb-4" >
-                  History
+                <h3  class="heyy" class="mb-4" >
+                  HIS<span style="color: #8A39E1;">TORY</span>
                 </h3>
                 <% for(let game of user.history){ %>
                   <div style="min-height: 100px; margin-bottom: 20px; overflow: hidden;">
                       <h4><%= game.game %></h4>
 
                     <% if(game.status==="won") { %>
-                      <div style="color: green;">Winner: <%=game.winner%></div>
-                      <div style="color: red">Loser: <%=game.loser%> </div>
+                      <div><span style="color: #00FFAB;">Winner: </span><%=game.winner%></div>
+                      <div><span style="color: #FF0063;">Looser: </span><%=game.loser%> </div>
                     <% } else { %>
                       <div style="color: grey;"><%=game.winner%></div>
                       <div style="color: grey"><%=game.loser%> </div>
@@ -138,7 +139,4 @@
         </div>
       </div>
     </div>
-  </div>
 </section>
-
-

@@ -303,7 +303,7 @@ a {
     color: black;
   }
 .login{
-  margin: 15px 0 0 5vw;
+  margin: 15px 0 0 2vw;
   height: 50px;
 }
 .signup{
@@ -396,6 +396,14 @@ a {
     color: #dadde1;
 }
 
+.login2{
+  width: 150px;
+  height: 50px;
+  text-align: center;
+}
+/* .logout{
+  top: 0;
+} */
 /* ------------------------------------------------------------------------------------------ */
 /* games.html */
 input[type=radio] {
@@ -625,6 +633,9 @@ input[type=radio] {
   .nav-links {
     text-align: center;
   }
+  .login2{
+    width: 100%;
+  }
   .diff{
         padding-top: 5px;
   }
@@ -696,4 +707,33 @@ input[type=radio] {
 
 .hi{
   color: #8A39E1;
+}
+
+
+/* Profile Css */
+/*.row{
+  background-image: url("/images/gamesbg.png");
+    color: black;
+}*/
+.card-body{
+  margin-top: 80px;
+  padding-top: 40px;
+}
+.heyy{
+  text-align: center;
+}
+.cardio{
+  padding-bottom: 100px;
+}
+.carded{
+  padding-bottom: 95px;
+}
+.card{
+  background-image: url("/images/gamesbg.png");
+  color: white;
+}
+.carding{
+  margin-bottom: 50px;
+  padding-bottom: 160px;
+  padding-top: 20px;
 }
