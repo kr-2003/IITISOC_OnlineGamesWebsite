@@ -1,0 +1,122 @@
+#game-body {
+    overflow-y: hidden;
+    overflow-x: hidden;
+}
+body::-webkit-scrollbar {
+    display: none;
+}
+
+.team-neutral {
+    background-color: antiquewhite;
+    color: black;
+}
+.team-red {
+    background-color: #f14668;
+    color: #fff;
+}
+.team-blue {
+    background-color: #3298dc;
+    color: #fff; 
+}
+.team-death {
+    background-color: black;
+    color: white;
+}
+.invisible-to-guesser {
+    background-color: white;
+    color: black;
+}
+
+#gameScore {
+    margin: 0 auto;
+
+}
+#gameTurn {
+    margin-bottom: 3.5em;
+}
+
+#end-turn-button {
+    position: absolute;
+    left: 80vw;
+}
+
+#gameBoard {
+    width: 50em;
+    margin: 0 auto;
+}
+
+.game-piece {
+    /*box-shadow: 0.5em 0.5em 0.75em 0 black; */
+    text-align: center;
+    transition: transform .2s;
+    font-family: Raleway;
+    font-weight: 600;
+    
+}
+
+.game-piece:hover {
+    transform: scale(1.25); /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
+}
+
+
+#teamBoard-container {
+    width: 20em;
+    height: 20em;
+    float: left;
+}
+
+.buttons-container {
+    width: 15vw;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    margin-bottom: 1em;
+    margin-right: 0.5em;
+    margin-left: 2em;
+}
+
+#join-red-team {
+    margin-right: 10px;
+}
+#new-game-button {
+    align-self: flex-start;
+}
+
+
+.user-team-red {
+    background-color: #f14668;
+    color: #fff;
+}
+.user-team-blue {
+    background-color: #3298dc;
+    color: #fff; 
+}
+
+#redScore {
+    color:#f14668;
+}
+#blueScore {
+    color:#3298dc;
+}
+
+.icon.has-text-dark {
+    float: right;
+}
+
+#footer {
+    position: absolute;
+    height: 7.5em;
+    top: calc(100vh - 7.5em);
+    width: 100vw;
+    
+
+}
+
+@media (max-width: 2000px) {
+    #game-body {
+        height: 140vh;
+    }
+    #footer {
+        top: 125vh;
+    }
+}

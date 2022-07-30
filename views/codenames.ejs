@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Codenames</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="/css/codenames/stylesheet.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bulma@0.8.0/css/bulma.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/bulmaswatch/cyborg/bulmaswatch.min.css"
+    />
+    <!-- <link rel="stylesheet" href="assets/styles/stylesheet-game.css"> -->
+    <link rel="stylesheet" href="/css/codenames/game.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <script
+      defer
+      src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"
+    ></script>
+  </head>
+  <body>
+    <!-- Codenames Lobby HTML Code -->
+    <div id="lobby-body">
+      <div id="title-header">
+        <h1 class="title has-text-centered">Codenames</h1>
+      </div>
+      <div id="createARoom" class="columns">
+        <div id="create-box" class="box column is-6 has-text-centered">
+          <form id="create-a-room">
+            <div class="field is-horizontal">
+              <div class="field-label is-normal">
+                <label class="label" for="username" type="text"
+                  >Username:</label
+                >
+              </div>
+              <div class="field-body">
+                <div class="field is-expanded">
+                  <p class="control has-icons-left">
+                    <input type="text" class="input" id="username" required />
+                    <span class="icon is-left">
+                      <i class="fas fa-user"></i>
+                    </span>
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="field is-horizontal is-expanded">
+              <div class="field-label is-normal">
+                <label class="label" for="roomid" type="text">Room ID:</label>
+              </div>
+              <div class="field-body">
+                <div class="field is-expanded">
+                  <p class="control has-icons-left">
+                    <input
+                      type="text"
+                      class="input is-fullwidth"
+                      id="roomid"
+                      required
+                    />
+                    <span class="icon is-left">
+                      <i class="fas fa-hashtag"></i>
+                    </span>
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="field is-horizontal">
+              <div class="field-label is-normal">
+                <label class="label" for="password" type="text"
+                  >Password:</label
+                >
+              </div>
+              <div class="field-body">
+                <div class="field is-expanded">
+                  <p class="control has-icons-left">
+                    <input
+                      type="text"
+                      class="input"
+                      id="password"
+                      placeholder="Optional"
+                    />
+                    <span class="icon is-left">
+                      <i class="fas fa-key"></i>
+                    </span>
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div id="error-div"></div>
+            <button
+              type="button"
+              class="button is-success"
+              id="create-room-button"
+            >
+              Create Room
+            </button>
+            <button type="button" class="button is-info" id="join-room-button">
+              Join Room
+            </button>
+          </form>
+        </div>
+      </div>
+      <button class="button is-link" id="custom-words-button">
+        Custom Words
+        <span class="icon is-right"
+          ><i class="fas fa-caret-right" id="carrotRight"></i
+        ></span>
+      </button>
+
+      <div class="container" id="customWordBox">
+        <textarea
+          class="textarea has-fixed-size"
+          id="customWords"
+          placeholder="Add words seperated by a comma and space(Min 5, Max 100) (Ex: dog, cat, person) These words will be added in the next game! Only use for creating games."
+        ></textarea>
+      </div>
+    </div>
+    <!-- Codenames Game HTML Code -->
+    <div id="game-body">
+      <section class="hero is-dark is-desktop">
+        <div class="hero-body">
+          <div class="container">
+            <h1 class="title has-text-centered" id="title">Codenames</h1>
+          </div>
+        </div>
+      </section>
+      <div class="box has-text-centered is-desktop" id="gameScore">Score:</div>
+      <div id="gameTurn" class="box has-text-centered is-desktop"></div>
+      <div class="container is-desktop" id="teamBoard-container">
+        <div class="columns is-desktop is-mobile">
+          <div id="red-user-team" class="column is-desktop is-mobile">
+            Red Team
+          </div>
+          <div id="blue-user-team" class="column is-desktop is-mobile">
+            Blue Team
+          </div>
+        </div>
+      </div>
+      <div id="gameBoard"></div>
+      <div id="teamButtons-container" class="buttons-container">
+        <button class="button is-danger" id="join-red-team">
+          Join Red Team
+        </button>
+        <button class="button is-info" id="join-blue-team">
+          Join Blue Team
+        </button>
+      </div>
+      <div id="roleButtons-container" class="buttons-container">
+        <button id="spymaster-button" class="button is-dark">Spymaster</button>
+        <button id="guesser-button" class="button is-dark">Guesser</button>
+      </div>
+      <div id="gameButtons-container" class="buttons-container">
+        <button id="new-game-button" class="button is-dark">New Game</button>
+        <button id="end-turn-button" class="button is-dark is-desktop">
+          End Turn
+        </button>
+      </div>
+      <footer class="footer" id="footer">
+        <div class="content has-text-centered">
+          <p>
+            <strong>Codenames</strong> by
+            <a href="https://github.com/linschris">Christopher Linscott</a>. The
+            source code is licensed
+            <a href="http://opensource.org/licenses/mit-license.php">MIT</a>.
+            The original source code can be found on
+            <a href="https://github.com/linschris/codenames-remake">Github</a>.
+          </p>
+        </div>
+      </footer>
+    </div>
+  </body>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/qs/6.9.4/qs.min.js"></script>
+  <script src="/socket.io/socket.io.js"></script>
+  <script type="text/javascript" src="/js/codenames/words.js"></script>
+  <script type="text/javascript" src="/js/codenames/script.js"></script>
+  <script src="/js/codenames/main.js"></script>
+</html>
