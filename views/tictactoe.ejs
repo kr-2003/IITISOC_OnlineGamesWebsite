@@ -6,37 +6,42 @@
   </head>
   <body>
     <!-- TODO
-		
+
     -->
-    <h1><%= currentUser.username %> </h1>
-    <div class="game">
-      <div class="your_color"></div>
-      <div class="opponent_color"></div>
-      <div class="board">
-            <button class="btn" id="0-0"></button>
-            <button class="btn" id="0-1"></button>
-            <button class="btn" id="0-2"></button>
-            <button class="btn" id="1-0"></button>
-            <button class="btn" id="1-1"></button>
-            <button class="btn" id="1-2"></button>
-            <button class="btn" id="2-0"></button>
-            <button class="btn" id="2-1"></button>
-            <button class="btn" id="2-2"></button>
+    <div id="gridContainer">
+      <div class="logo"><a href="#"><img src="/images/logo.png" alt="" ></a></div>
+      <div class="name abhinav"><p><%= currentUser.username %> </p></div>
+      <div class="game_name"><img src="/images/tictactoe-removebg.png" alt=""></div>
+      <div class="empty"></div>
+      <div class="game">
+        <div class="your_color"></div>
+        <div class="opponent_color"></div>
+        <div class="board">
+              <button class="btn" id="0-0"></button>
+              <button class="btn" id="0-1"></button>
+              <button class="btn" id="0-2"></button>
+              <button class="btn" id="1-0"></button>
+              <button class="btn" id="1-1"></button>
+              <button class="btn" id="1-2"></button>
+              <button class="btn" id="2-0"></button>
+              <button class="btn" id="2-1"></button>
+              <button class="btn" id="2-2"></button>
         </div>
         <div class="status">Your turn!</div>
       </div>
-      
+      <div class="game_on"><img src="/images/Game-on-removebg.png" alt=""></div>
+      <div class="empty2"></div>
     </div>
+      <div class="underlay hidden"></div>
+      <div class="popover hidden">
+        <h2 class="hint">Waiting for opponent</h2>
+        <p>Give the url to a friend to play a game</p>
+        <input type="text" class="share_url" value="" />
+        <a href="/"><button>Exit</button></a>
 
-    <div class="underlay hidden"></div>
-    <div class="popover hidden">
-      <h2>Waiting for opponent</h2>
-      <p>Give the url to a friend to play a game</p>
-      <input type="text" class="share_url" value="" />
-      <a href="/"><button>Exit</button></a>
-      
-      
-    </div>
+
+      </div>
+    <!-- </div> -->
 
     <script
       src="https://code.jquery.com/jquery-latest.min.js"

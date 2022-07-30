@@ -10,15 +10,15 @@ $(function () {
 
   var text = {
     yt: "Your turn",
-    nyt: "Waiting for opponent",
-    popover_h2: "Waiting for opponent",
-    popover_p: "Give the url to a friend to play a game",
+    nyt: "Waiting for opponent.",
+    popover_h2: "Waiting for opponent.",
+    popover_p: "Give the url to a friend to play a game.",
     popover_h2_win: "You won the game!",
-    popover_p_win: "Give the url to a friend to play another game",
+    popover_p_win: "Give the url to a friend to play another game.",
     popover_h2_lose: "You lost the game..",
-    popover_p_lose: "Give the url to a friend to play another game",
-    popover_h2_draw: "Its a draw.. bummer!",
-    popover_p_draw: "Give the url to a friend to play another game",
+    popover_p_lose: "Give the url to a friend to play another game.",
+    popover_h2_draw: "Its a draw.. BUMMER!",
+    popover_p_draw: "Give the Url to a friend to play another game.",
   };
 
   init();
