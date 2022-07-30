@@ -70,7 +70,7 @@
                     <li class="nav-item nav-links diff">
                       <a class="nav-link" href="contact.html">Contact</a>
                     </li>
-                    <% if(!currentUser) {%>
+                    <% if(currentUser===undefined) {%>
                       <li class="nav-item nav-links login">
                         <a href="/login" class="btn_1 d-sm-block">Login</a>
                       </li>
