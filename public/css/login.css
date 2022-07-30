@@ -1,27 +1,17 @@
-.login-header{
-}
+
 .baap{
   position: relative;
   top: 100px;
+  padding-top: 60px;
 }
 
-.gameon{
-  position: relative;
-
-  right: 300px;
-}
-.onemore{
-  position: relative;
-  bottom: 450px;
-  left: 800px;
-}
 .inputs{
   text-align: center;
-  margin: 20px;
+  margin: 10px;
 }
 .whitebox{
-  height: 300px;
-  background-image: url("/images/login.png");
+  margin: auto;
+  width:50%;
 }
 
 .auth{
@@ -32,12 +22,14 @@
 input{
   background-color: #848790;
   opacity: 0.7;
-  border-color: #b21cea;
+  border-color: #7A0BC0;
   border-width: 3px;
 }
 
 .button{
   display: inline-block;
+  width: 280px;
+  margin-top: 20px;
   font-weight: 400;
   line-height: 1.5;
   color: white;
@@ -62,15 +54,37 @@ input{
 
 .whitebg{
   opacity: 0.2;
-  position:relative;
-  left: 145px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
 }
-
 .bada{
   position:relative;
-  bottom:420px;
+  bottom:440px;
+
 }
 .bada-register{
   position:relative;
-  bottom:500px;
+  bottom:525px;
+
+}
+
+.head{
+  margin: 30px;
+}
+.border-login{
+  border: 7px solid #7A0BC0;
+  width:100%;
+}
+
+.input-text{
+  width: 300px;
+  height: 35px;
+  opacity:.8;
+}
+
+::placeholder{
+  color:black;
+  opacity:.6;
 }

@@ -1,55 +1,71 @@
 <% layout('layout/boilerplate.ejs') %>
 <div class="container">
+  <div style="height: 100vh; color: white">
+    <div class="row" style="margin-bottom: 40px">
+      <div class="container baap">
+        <div class="col-md-6 offset-3">
+          <form
+            class="needs-validation"
+            action="/login"
+            method="post"
+            novalidate
+          >
+            <div class="container whitebox">
+              <div class="border-login">
+                <img
+                  src="images/white.png"
+                  class="whitebg"
+                  alt=""
+                  width="400px"
+                  height="450px"
+                />
+              </div>
 
+              <div class="bada">
+                <h1 class="text-center head">LOGIN</h1>
+                <div class="mb-3 inputs">
+                  <label
+                    class="form-label auth"
+                    for="username"
+                    style="position: relative; right: 82px"
+                    >USERNAME</label
+                  ><br />
+                  <input
+                    class="form-text input-text"
+                    type="text"
+                    name="username"
+                    id="username"
+                    placeholder="Username"
+                    style="color: black"
+                    required
+                  /><br />
+                  <div class="valid-feedback">Looks good!</div>
+                </div>
 
-<div style=" height: 100vh; color: white;">
-  <div class="row" style="margin-bottom: 40px;">
-    <div class="container baap">
-
-      <div class="col-md-6 offset-3">
-        <form class="needs-validation" action="/login" method="post" novalidate>
-        <div class="container whitebox">
-          <img src="images/login.png" class="whitebg" alt="" width="300px" height=450px>
-        <div class="bada">
-          <h1 class="text-center">LOGIN</h1>
-          <div class="mb-3 inputs">
-            <label class="form-label auth" for="username" style="position:relative;right:15px;">USERNAME</label><br>
-            <input class="form-text inputs" type="text" name="username" id="username" placeholder="Username" required><br>
-            <div class="valid-feedback">
-              Looks good!
+                <div class="mb-3 inputs">
+                  <label
+                    for="password"
+                    class="form-label auth"
+                    style="position: relative; right: 82px"
+                    >PASSWORD</label
+                  ><br />
+                  <input
+                    class="form-text input-text"
+                    type=" text"
+                    name="password"
+                    id="password"
+                    style="color: black"
+                    placeholder="password"
+                    required
+                  /><br /><br />
+                  <div class="valid-feedback">Looks good!</div>
+                  <button class="button" type="submit">SUBMIT</button>
+                </div>
+              </div>
             </div>
-          </div>
-
-
-        <div class="mb-3 inputs">
-          <label for="password" class="form-label auth" style="position:relative;right:25px;">PASSWORD</label><br>
-          <input class= "inputs" type=" text" name="password" id="password" placeholder="password" required><br><br>
-          <div class="valid-feedback">
-            Looks good!
-          </div>
-          <button class="button" type="submit" >SUBMIT</button>
-          </div>
+          </form>
         </div>
-
-
-        </div>
-
-            <div class="gameon">
-              <img src="images/tag2.png" height="150px" width="150px" alt="">
-            </div>
-            <div class="onemore">
-              <img src="images/tag1.png" width="180px" height="250px" alt="">
-            </div>
-
-
-
-
-          <br>
-
-        </form>
       </div>
     </div>
-
-    </div>
-</div>
+  </div>
 </div>
