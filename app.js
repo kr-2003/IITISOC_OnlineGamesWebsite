@@ -18,7 +18,7 @@ import { captureRejectionSymbol } from "events";
 import ExpressError from "./utils/ExpressError.js";
 import catchAsync from "./utils/ExpressError.js";
 import { Server } from "socket.io";
-const PORT = 3000;
+const PORT = process.env.PORT || 3000;
 const server = express()
   .use(app)
   .listen(PORT, () => console.log(`Listening Socket on ${PORT}`));
