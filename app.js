@@ -88,7 +88,7 @@ let currentUser;
 app.use((req, res, next) => {
   console.log(req.session);
   res.locals.currentUser = req.user;
-  currentUser = req.user;
+  currentuser = req.user;
   res.locals.success = req.flash("success");
   res.locals.error = req.flash("error");
   next();
@@ -206,7 +206,7 @@ io.sockets.on("connection", function (socket) {
       socket.pid = 2;
       socket.hash = generateHash(8);
       game.player2 = socket;
-      game.player2Username = currentUser.username;
+      game.player2Username = currentuser.username;
       socket.opponent = game.player1;
       game.player1.opponent = socket;
       socket.emit("assign", { pid: socket.pid, hash: socket.hash });
@@ -220,7 +220,7 @@ io.sockets.on("connection", function (socket) {
       socket.hash = generateHash(8);
       ttt_game_logic.games[data.room] = {
         player1: socket,
-        player1Username: currentUser.username,
+        player1Username: currentuser.username,
         moves: 0,
         board: [
           [0, 0, 0],
@@ -323,7 +323,7 @@ io.sockets.on("connection", function (socket) {
       socket.pid = 2;
       socket.hash = generateHash(8);
       game.player2 = socket;
-      game.player2Username = currentUser.username;
+      game.player2Username = currentuser.username;
       socket.opponent = game.player1;
       game.player1.opponent = socket;
       socket.emit("assign", { pid: socket.pid, hash: socket.hash });
@@ -337,7 +337,7 @@ io.sockets.on("connection", function (socket) {
       socket.hash = generateHash(8);
       c4_game_logic.games[data.room] = {
         player1: socket,
-        player1Username: currentUser.username,
+        player1Username: currentuser.username,
         moves: 0,
         board: [
           [0, 0, 0, 0, 0, 0, 0],
@@ -433,7 +433,7 @@ io.sockets.on("connection", function (socket) {
       socket.pid = 2;
       socket.hash = generateHash(8);
       game.player2 = socket;
-      game.player2Username = currentUser.username;
+      game.player2Username = currentuser.username;
       socket.opponent = game.player1;
       game.player1.opponent = socket;
       socket.emit("assign", { pid: socket.pid, hash: socket.hash });
@@ -447,7 +447,7 @@ io.sockets.on("connection", function (socket) {
       socket.hash = generateHash(8);
       dab_game_logic.games[data.room] = {
         player1: socket,
-        player1Username: currentUser.username,
+        player1Username: currentuser.username,
         moves: 0,
         boxesColor: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
         boxes: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
