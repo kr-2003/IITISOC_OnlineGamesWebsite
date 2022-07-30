@@ -40,9 +40,11 @@ mongoose
     console.log(err);
   });
 
+const secret = process.env.SECRET || "thisshouldbebettersecret";
+
 const store = new MongoStore({
   mongoUrl: dbUrl,
-  secret: "thisshouldbebettersecret",
+  secret: secret,
   touchAfter: 24 * 3600,
 });
 
