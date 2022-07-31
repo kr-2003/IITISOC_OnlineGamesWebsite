@@ -70,7 +70,7 @@
                     <li class="nav-item nav-links diff">
                       <a class="nav-link" href="contact.html">Contact</a>
                     </li>
-                    <% if(!currentUser) {%>
+                    <% if(currentUser===undefined) {%>
                       <li class="nav-item nav-links login">
                         <a href="/login" class="btn_1 d-sm-block">Login</a>
                       </li>
@@ -78,14 +78,12 @@
                         <a href="/register" class="btn_1 d-sm-block">Sign Up</a>
                       </li>
                       <% } else { %>
-                      <div style="color: white">
                         <li class="nav-item nav-links login">
                           <a href="/users/<%=currentUser._id%>" class="btn_1 d-sm-block">Hi!, <%= currentUser.username %></a>
                         </li>
                         <li class="nav-item nav-links login signup">
                           <a href="/logout" class="btn_1 d-sm-block">Logout</a>
                         </li>
-                      </div>
                       <% } %>
 
                   </ul>
@@ -94,7 +92,7 @@
             </div>
           </div>
         </div>
-        <% if(success && success.length) {%>
+        <% if(success!==undefined && success.length) {%>
           <div class="alert alert-success alert-dismissible fade show" role="alert">
             <p><%= success %></p>
             <button
@@ -104,7 +102,7 @@
               aria-label="Close"
             ></button>
           </div>
-          <% } %> <% if(error && error.length) {%>
+          <% } %> <% if(error!==undefined && error.length) {%>
           <div class="alert alert-danger alert-dismissible fade show" role="alert">
             <p><%= error %></p>
             <button
@@ -153,11 +151,11 @@
         <div id="grid-item-7">
           <div class="footer">
             <ul>
-              <li>Iron Man</li>
-              <li>Iron Man</li>
-              <li>Iron Man</li>
-              <li>Iron Man</li>
-              <li>Iron Man</li>
+              <li class="waste">Iron Man</li>
+              <li class="waste">Iron Man</li>
+              <li class="waste">Iron Man</li>
+              <li class="waste">Iron Man</li>
+              <li class="waste">Iron Man</li>
             </ul>
           </div>
         </div>
