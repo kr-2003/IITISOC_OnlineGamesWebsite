@@ -1,6 +1,10 @@
 body {
     background-color: #333;
 }
+
+.waste:hover{
+  color: green;
+}
 #bg_body{
     height: 100vh;
     position: relative;
@@ -268,7 +272,7 @@ a {
 
 .nav > .nav-links {
   display: inline;
-  width: 100%;
+  width: 90%;
   margin: 0vh 10vw;
   font-family: 'Montserrat', sans-serif;
     /* font-size: 50px; */
@@ -281,6 +285,7 @@ a {
     margin: 1.5vw 3.0vw;
     font-family: 'Montserrat', sans-serif;
     align-items: center;
+    border: 1.5px solid #ab34de00;
   }
   .diff{
     padding-top: 5px;
@@ -296,7 +301,7 @@ a {
 
   .nav-links:hover {
     background-image: linear-gradient(to right, #293462 0%, #000B49 51%, #06283D 100%);
-    border: 0.4vh solid #aa34de;
+    border: 1.5px solid #aa34de;
 }
 .nav-links> a:hover {
     font-weight: 500;
@@ -552,7 +557,7 @@ input[type=radio] {
     .nav > .nav-links {
         position: absolute;
         display: initial;
-        width: 90%;
+        width: 80%;
         background-color: #0E1A23;
         height: 0px;
         transition: all 0.3s ease-in;
@@ -561,12 +566,12 @@ input[type=radio] {
         left: 0px;
     }
     .nav>.nav-links>div{
-        width: 90%;
+        width: 80%;
         text-align: center;
     }
     .nav > .nav-links > a {
       display: block;
-        width: 100%;
+        width: 90%;
     }
     .nav > #nav-check:not(:checked) ~ .nav-links {
       height: 0px;

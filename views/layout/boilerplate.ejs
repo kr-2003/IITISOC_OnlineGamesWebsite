@@ -78,14 +78,12 @@
                         <a href="/register" class="btn_1 d-sm-block">Sign Up</a>
                       </li>
                       <% } else { %>
-                      <div style="color: white">
                         <li class="nav-item nav-links login">
                           <a href="/users/<%=currentUser._id%>" class="btn_1 d-sm-block">Hi!, <%= currentUser.username %></a>
                         </li>
                         <li class="nav-item nav-links login signup">
                           <a href="/logout" class="btn_1 d-sm-block">Logout</a>
                         </li>
-                      </div>
                       <% } %>
                     
                   </ul>
@@ -153,11 +151,11 @@
         <div id="grid-item-7">
           <div class="footer">
             <ul>
-              <li>Iron Man</li>
-              <li>Iron Man</li>
-              <li>Iron Man</li>
-              <li>Iron Man</li>
-              <li>Iron Man</li>
+              <li class="waste">Iron Man</li>
+              <li class="waste">Iron Man</li>
+              <li class="waste">Iron Man</li>
+              <li class="waste">Iron Man</li>
+              <li class="waste">Iron Man</li>
             </ul>
           </div>
         </div>
