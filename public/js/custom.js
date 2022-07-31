@@ -1,9 +1,9 @@
 (function ($) {
     "use strict";
   
-    $(document).ready(function () {
-      $('select').niceSelect();
-    });
+    // $(document).ready(function () {
+    //   $('select').niceSelect();
+    // });
     // menu fixed js code
     $(window).scroll(function () {
       var window_top = $(window).scrollTop() + 1;
@@ -13,11 +13,11 @@
         $('.main_menu').removeClass('menu_fixed animated fadeInDown');
       }
     });
-    $('.grid').masonry({
-      itemSelector: '.grid-item',
-      columnWidth: '.grid-sizer',
-      percentPosition: true
-    });
+    // $('.grid').masonry({
+    //   itemSelector: '.grid-item',
+    //   columnWidth: '.grid-sizer',
+    //   percentPosition: true
+    // });
   
     var client_logo = $('.client_logo_slider')
     if (client_logo.length) {
@@ -46,15 +46,15 @@
     }
   
   
-    $('.img-gal, .popup-youtube').magnificPopup({
-      type: 'image',
-      gallery: {
-        enabled: true
-      }
-    });
-    $('.popup-youtube').magnificPopup({
-      type: 'iframe',
-    });
+    // $('.img-gal, .popup-youtube').magnificPopup({
+    //   type: 'image',
+    //   gallery: {
+    //     enabled: true
+    //   }
+    // });
+    // $('.popup-youtube').magnificPopup({
+    //   type: 'iframe',
+    // });
   
     var client_logo = $('.client_logo_slider')
     if (client_logo.length) {
@@ -145,10 +145,10 @@
     }, 1000);
   
     //------- Mailchimp js --------//  
-    function mailChimp() {
-      $('#mc_embed_signup').find('form').ajaxChimp();
-    }
-    mailChimp();
+    // function mailChimp() {
+    //   $('#mc_embed_signup').find('form').ajaxChimp();
+    // }
+    // mailChimp();
   
   
   }(jQuery));

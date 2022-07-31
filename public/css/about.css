@@ -1,0 +1,48 @@
+.big--Container{
+    padding-top: 100px;
+    display: grid;
+    grid-template-columns: repeat(2, 47%);
+    grid-template-columns: repeat(2, 47%);
+    text-align: center;
+}
+
+.inside--Container{
+    height: 100%;
+    width: 100%;
+    height: 250px;
+    
+    padding: 2%;
+    margin: 2%;
+    display: flex;
+
+}
+.about-card p{
+    text-align: left;
+}
+
+.about-card{
+  background-image: linear-gradient(to right, #b983ff84 0%, #6d3cbc73 51%, #75318878 100%);
+    height: 100%;
+    width: 100%;
+    padding: 7px;
+    color: white;
+}
+.name {
+    color: #DDDDDD;
+}
+
+
+.about-img{
+    margin-top: 10px;
+    height: 65%;
+    width: 20%;
+    overflow: hidden;
+    float: left;
+    margin: 10px;
+    
+}
+
+.about-img img{
+    object-fit: cover;
+    width: 100%;
+}

@@ -89,6 +89,7 @@ passport.deserializeUser(User.deserializeUser());
 let currentUser;
 app.use((req, res, next) => {
   console.log(req.session);
+  req.session.returnTo = req.originalUrl;
   res.locals.currentUser = req.user;
   currentUser = req.user;
   res.locals.success = req.flash("success");
@@ -125,8 +126,9 @@ app.get(
 );
 
 app.get("/tictactoe/:room([A-Za-z0-9]{6})", function (req, res) {
-  if (req.user !== undefined) res.render("tictactoe.ejs");
-  else {
+  if (req.user !== undefined) {
+    res.render("tictactoe.ejs");
+  } else {
     req.flash("error", "Need to login/signup first!!");
     res.redirect(`/login`);
   }
@@ -792,6 +794,13 @@ app.get(
 );
 
 app.get(
+  "/about",
+  catchAsync(async (req, res) => {
+    res.render("about.ejs");
+  })
+);
+
+app.get(
   "/logout",
   catchAsync(async (req, res) => {
     req.logout(function (err) {
@@ -824,7 +833,7 @@ app.post(
       req.login(newUser, (err) => {
         if (err) return next(err);
         req.flash("success", "Successfully signed up!!");
-        res.redirect("/login");
+        res.redirect("/");
       });
     } catch (err) {
       // console.log(err.message);
@@ -842,8 +851,8 @@ app.post(
   }),
   catchAsync(async (req, res) => {
     req.flash("success", "Welcome Back!!!");
-    // const redirectUrl = req.session.returnTo || "/";
-    res.redirect("/login");
+    const redirectUrl = req.session.returnTo || "/";
+    res.redirect(redirectUrl);
   })
 );
 
