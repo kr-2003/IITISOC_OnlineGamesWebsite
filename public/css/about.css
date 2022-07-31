@@ -46,3 +46,20 @@
     object-fit: cover;
     width: 100%;
 }
+
+@media(max-width: 1344px){
+    .about-card{
+        font-size: smaller;
+    }
+}
+
+@media(max-width: 928px){
+    .big--Container{
+        padding-top: 100px;
+        display: grid;
+        /* grid-template-columns: repeat(4, 25%); */
+        grid-template-columns: repeat(1, 95%);
+        text-align: center;
+    }
+    
+}
