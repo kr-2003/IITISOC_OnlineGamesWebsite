@@ -1,11 +1,15 @@
 body{
-	background: #f2f2f2;
+	/* background: #f2f2f2; */
 	font-family: arial;
+	background-image: url("/images/connect4bg.jpg");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+	height: 100vh;
 }
 
 .board{
-	width: 700px;
-	height: 600px;
+	width: 500px;
+	height: 420px;
 	background: #00658F;
 	-webkit-border-radius: 5px;
 	-moz-border-radius: 5px;
@@ -14,19 +18,57 @@ body{
 	-moz-box-shadow: 0px 10px 43px -16px rgba(0,0,0,0.75);
 	box-shadow: 0px 10px 43px -16px rgba(0,0,0,0.75);
 }
-
+#gridContainer{
+	display: grid;
+	/* grid-template-columns: 33vw 33vw 33vw; */
+	grid-template-columns: calc(50vw - 280px) 560px calc(50vw - 280px);
+	/* grid-template-rows: 33vh 40vh 60vh 66vh; */
+	grid-template-areas: 
+		"logo game empty"
+		"player_name game empty"
+		"c4name game empty";
+}
+.logo{
+	grid-area: logo;
+	height: 20vh;
+}
+.logo>a{
+	margin: 0 0 0 5vw;
+}
+.logo>a>img{
+	margin-top: 2vh;
+	/* width: 100px; */
+	height: 100px;
+}
+.player_name{
+	grid-area: player_name;
+	height: 30vh;
+}
+.c4name{
+	grid-area: c4name;
+	height: 50vh;
+	/* top: 2vh; */
+}
+.c4name>img{
+	width: 20vw;
+	margin: 10vh 0 0 5vw;
+	height: 15vh;
+}
 .game{
+	grid-area: game;
+	/* height: 100vh; */
 	position: relative;
-	width: 700px;
+	width: 500px;
 	margin: 120px auto 0;
+	top: 0;
 }
 
 .your_color{
 	position: absolute;
 	top: -100px;
 	margin-left: 5px;
-	width: 90px;
-	height: 90px;
+	width: 72px;
+	height: 72px;
 	-webkit-border-radius: 45px;
 	-moz-border-radius: 45px;
 	border-radius: 45px;
@@ -42,8 +84,8 @@ body{
 	position: absolute;
 	top: -100px;
 	margin-left: 5px;
-	width: 90px;
-	height: 90px;
+	width: 72px;
+	height: 72px;
 	-webkit-border-radius: 45px;
 	-moz-border-radius: 45px;
 	border-radius: 45px;
@@ -67,7 +109,7 @@ body{
 
 .cols{
 	width: 100%;
-	height: 100%;
+	height: 420px;
 	position: absolute;
 	z-index: 10;
 }
@@ -75,10 +117,12 @@ body{
 .cols > .col{
 	position: relative;
 	float: left;
-	width: 100px;
+	width: 71px;
 	height: 100%;
 }
-
+.layer1{
+	width: 502px;
+}
 @-moz-keyframes blink {0%{opacity:1;} 50%{opacity:.5;} 100%{opacity:1;}}
 @-webkit-keyframes blink {0%{opacity:1;} 50%{opacity:.5;} 100%{opacity:1;}}
 @-ms-keyframes blink {0%{opacity:1;} 50%{opacity:.5;} 100%{opacity:1;}}
@@ -99,8 +143,8 @@ body{
 	position: absolute;
 	left: 5px;
 	margin-top: 5px;
-	width: 90px;
-	height: 90px;
+	width: 72px;
+	height: 72px;
 	-webkit-border-radius: 45px;
 	-moz-border-radius: 45px;
 	border-radius: 45px;
@@ -176,7 +220,7 @@ body{
 
 .status{
 	position: absolute;
-	bottom: -40px;
+	/* bottom: -40px; */
 	width: 100%;
 	text-align: center;
 	line-height: 40px;
@@ -186,9 +230,59 @@ body{
 	border-radius: 0 0 10px 10px;
 }
 
-@media only screen and (max-device-width: 768px) {
-	.game {
+/* @media only screen and (max-device-width: 980px) { */
+@media (max-width: 980px) {
+	/* .game {
 		margin: 120px 0;
 		zoom: 138% !important;
+	} */
+	.c4name{
+		display: none;
+	}
+	.empty{
+		display: none;
+	}
+	#gridContainer{
+		grid-template-columns: calc(6vw + 100px) calc(94vw - 100px);
+		grid-template-rows: 20vh 79vh;
+		grid-template-areas: 
+			"logo player_name"
+			"game game";
+		height: 100vh;
+	}
+	.player_name{
+		height: 20vh;
+	}
+	.opponent_color{
+		width: 7vh;
+		height: 7vh;
+	}
+	.your_color{
+		width: 7vh;
+		height: 7vh;
+	}
+	.coin{
+		width: 7vh;
+		height: 7vh;
+	}
+	.game{
+		width: 50vh;
+	}
+	.board{
+		width: 50vh;
+		height: 43vh;
+	}
+	.layer1{
+		width: 50vh;
+	}
+	.cols{
+		height: 43vh;
+	}
+	.col{
+		width: 7vh !important;
+	}
+	.status{
+		font-size: 3.5vh;
+		line-height: 6vh;
 	}
 }

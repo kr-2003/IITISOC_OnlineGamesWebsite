@@ -104,9 +104,18 @@ $(function () {
     console.debug(data);
   });
 
+  var abc = window.matchMedia("(max-width: 980px)")
+  var xyz = 8
+  const vh = Math.max(document.documentElement.clientHeight || 0, window.innerHeight || 0)
+  if (abc.matches) {
+    xyz=49.5
+  } else {
+    xyz=69
+  }
+
   $(".cols > .col").mouseenter(function () {
     if (your_turn) {
-      yc.css("left", $(this).index() * 100);
+      yc.css("left", $(this).index() * xyz);
       socket.emit("my_move", { col: $(this).index() });
     }
   });
@@ -123,6 +132,7 @@ $(function () {
       }
     }
   });
+
 
   function make_move(col, other) {
     if (!other) other = false;
@@ -142,7 +152,7 @@ $(function () {
     col_elm.append(new_coin);
     new_coin.animate(
       {
-        top: 100 * (4 - current_in_col + 1),
+        top: xyz * (4 - current_in_col + 1),
       },
       400
     );
