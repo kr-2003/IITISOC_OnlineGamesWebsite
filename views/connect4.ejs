@@ -8,23 +8,28 @@
     <!-- TODO
 		
 	 -->
-
-    <div class="game">
-      <div class="your_color"></div>
-      <div class="opponent_color"></div>
-      <div class="board">
-        <img src="/images/board.svg" class="overlay" />
-        <div class="cols">
-          <div class="col" id="col_1" data-in-col="0"></div>
-          <div class="col" id="col_2" data-in-col="0"></div>
-          <div class="col" id="col_3" data-in-col="0"></div>
-          <div class="col" id="col_4" data-in-col="0"></div>
-          <div class="col" id="col_5" data-in-col="0"></div>
-          <div class="col" id="col_6" data-in-col="0"></div>
-          <div class="col" id="col_7" data-in-col="0"></div>
+    <div id="gridContainer">
+      <div class="logo"><a href="#"><img src="/images/logo.png" alt="" ></a></div>
+      <div class="player_name"></div>
+      <div class="c4name"><img src="/images/c4.png" alt=""></div>
+      <div class="game">
+        <div class="your_color"></div>
+        <div class="opponent_color"></div>
+        <div class="board">
+          <img src="/images/board.svg" class="overlay layer1" />
+          <div class="cols">
+            <div class="col" id="col_1" data-in-col="0"></div>
+            <div class="col" id="col_2" data-in-col="0"></div>
+            <div class="col" id="col_3" data-in-col="0"></div>
+            <div class="col" id="col_4" data-in-col="0"></div>
+            <div class="col" id="col_5" data-in-col="0"></div>
+            <div class="col" id="col_6" data-in-col="0"></div>
+            <div class="col" id="col_7" data-in-col="0"></div>
+          </div>
         </div>
+        <div class="status">Your turn!</div>
       </div>
-      <div class="status">Your turn!</div>
+      <div class="empty"></div>
     </div>
 
     <div class="underlay hidden"></div>
