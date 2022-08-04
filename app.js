@@ -1,8 +1,6 @@
 import dotenv from "dotenv";
 dotenv.config();
-
 import express from "express";
-import { rmSync } from "fs";
 let app = express();
 import mongoose from "mongoose";
 import path from "path";
@@ -15,8 +13,6 @@ import passport from "passport";
 import LocalStrategy from "passport-local";
 import ejsMate from "ejs-mate";
 import { User } from "./models/user.js";
-// import { Blog } from "./models/blog.js";
-import { captureRejectionSymbol } from "events";
 import ExpressError from "./utils/ExpressError.js";
 import catchAsync from "./utils/ExpressError.js";
 import { Server } from "socket.io";
@@ -31,6 +27,7 @@ import dab_game_logic from "./gamelogics/dab_game_logic.js";
 let gameMap = {};
 let userMap = undefined;
 const dbUrl = process.env.DB_URL;
+import collect from "collect.js";
 
 mongoose
   .connect(dbUrl, {
@@ -191,6 +188,52 @@ function generateHash(length) {
   }
   return output;
 }
+
+app.get(
+  "/leaderboard/tictactoe",
+  catchAsync(async (req, res) => {
+    let leaderboardUsers = collect(
+      await User.find({ tictactoe: { $exists: true } })
+        .sort({ tictactoe: -1 })
+        .limit(10)
+    ).toArray();
+    res.render("leaderboard/tictactoe.ejs", { leaderboardUsers });
+  })
+);
+app.get(
+  "/leaderboard/connect4",
+  catchAsync(async (req, res) => {
+    let leaderboardUsers = collect(
+      await User.find({ connect4: { $exists: true } })
+        .sort({ connect4: -1 })
+        .limit(10)
+    ).toArray();
+    res.render("leaderboard/connect4.ejs", { leaderboardUsers });
+  })
+);
+app.get(
+  "/leaderboard/dotsandboxes",
+  catchAsync(async (req, res) => {
+    let leaderboardUsers = collect(
+      await User.find({ dotsandboxes: { $exists: true } })
+        .sort({ dotsandboxes: -1 })
+        .limit(10)
+    ).toArray();
+    res.render("leaderboard/dotsandboxes.ejs", { leaderboardUsers });
+  })
+);
+app.get(
+  "/leaderboard/codenames",
+  catchAsync(async (req, res) => {
+    let { game } = req.params;
+    let leaderboardUsers = collect(
+      await User.find({ codenames: { $exists: true } })
+        .sort({ codenames: -1 })
+        .limit(10)
+    ).toArray();
+    res.render("leaderboard/codenames.ejs", { game,leaderboardUsers });
+  })
+);
 
 var rooms = [];
 
@@ -721,6 +764,55 @@ const history = async (status, game, winner, loser) => {
   console.log(status, game, winner, loser);
   const player1 = await User.findOne({ username: winner.toString() });
   const player2 = await User.findOne({ username: loser.toString() });
+  if (game === "Tic Tac Toe") {
+    if (status == "won") {
+      await User.findOneAndUpdate(
+        { username: player1.username },
+        { $inc: { tictactoe: 5 } }
+      );
+      await User.findOneAndUpdate(
+        { username: player2.username },
+        { $inc: { tictactoe: -5 } }
+      );
+    }
+  }
+  if (game === "Connect 4") {
+    if (status === "won") {
+      await User.findOneAndUpdate(
+        { username: player1.username },
+        { $inc: { connect4: 5 } }
+      );
+      await User.findOneAndUpdate(
+        { username: player2.username },
+        { $inc: { connect4: -5 } }
+      );
+    }
+  }
+  if (game === "Dots and Boxes") {
+    if (status === "won") {
+      await User.findOneAndUpdate(
+        { username: player1.username },
+        { $inc: { dotsandboxes: 5 } }
+      );
+      await User.findOneAndUpdate(
+        { username: player2.username },
+        { $inc: { dotsandboxes: -5 } }
+      );
+    }
+  }
+  if (game === "Codenames") {
+    if (status === "won") {
+      await User.findOneAndUpdate(
+        { username: player1.username },
+        { $inc: { codenames: 5 } }
+      );
+      await User.findOneAndUpdate(
+        { username: player2.username },
+        { $inc: { codenames: -5 } }
+      );
+    }
+  }
+
   player1.history.unshift({
     game: game,
     status: status,
@@ -830,6 +922,24 @@ app.post(
         username: req.body.username,
       });
       const newUser = await User.register(user, req.body.password);
+      await User.findOneAndUpdate(
+        { username: newUser.username },
+        { $inc: { tictactoe: 0 } }
+      );
+
+      await User.findOneAndUpdate(
+        { username: newUser.username },
+        { $inc: { connect4: 0 } }
+      );
+      await User.findOneAndUpdate(
+        { username: newUser.username },
+        { $inc: { dotsandboxes: 0 } }
+      );
+      await User.findOneAndUpdate(
+        { username: newUser.username },
+        { $inc: { codenames: 0 } }
+      );
+      newUser.save();
       req.login(newUser, (err) => {
         if (err) return next(err);
         req.flash("success", "Successfully signed up!!");

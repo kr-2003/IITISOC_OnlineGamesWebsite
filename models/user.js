@@ -32,6 +32,10 @@ const userSchema = new Schema({
       },
     },
   ],
+  tictactoe: 0,
+  connect4: 0,
+  dotsandboxes: 0,
+  codenames: 0
 });
 
 userSchema.plugin(passportLocalMongoose);

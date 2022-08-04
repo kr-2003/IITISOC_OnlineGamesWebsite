@@ -1,0 +1,27 @@
+<% layout("layout/boilerplate.ejs") %>
+
+<div>
+  <h1 class="game-heading">Dots and Boxes</h1>
+  <div class="lead-card">
+    <div class="inner-lead-card">
+      <div class="colu-1">
+        <div class="attributes">Rank</div>
+        <% leaderboardUsers.forEach((user, i)=>{%>
+        <div class="row-val"><%= i+1 %></div>
+        <% }) %>
+      </div>
+      <div class="colu-1">
+        <div class="attributes">Username</div>
+        <% for(let user of leaderboardUsers){ %>
+        <div class="row-val"><%= user.username %></div>
+        <% } %>
+      </div>
+      <div class="colu-1">
+        <div class="attributes">Coins</div>
+        <% for(let user of leaderboardUsers){ %>
+        <div class="row-val"><%= user.dotsandboxes %></div>
+        <% } %>
+      </div>
+    </div>
+  </div>
+</div>

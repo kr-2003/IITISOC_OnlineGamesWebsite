@@ -1,0 +1,43 @@
+.lead-card{
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(195, 245, 245, 0);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: -50px;
+}
+
+.inner-lead-card{
+    width: 50vw;
+    height: 80vh;
+    background-color:rgb(99, 167, 167);
+    display: grid;
+    grid-template-columns: 10% 70% 20%;
+}
+
+.attributes{
+    height: 6.66vh;
+    background-color: rgb(37, 105, 105);
+    border: 1px solid black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.row-val{
+    height: 5vh;
+    
+    border: 1px solid black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.game-heading{
+    padding-top: 100px;
+    margin-bottom: 0;
+    padding-bottom: 0;
+    color: white;
+    text-align: center;
+}
