@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Black+Ops+One&display=swap');
+
 body {
     background-color: #333;
 }
@@ -322,10 +324,14 @@ a {
     margin-left: 18vw;
   }
 #head1{
+  font-family: 'Black Ops One', cursive;
     color: white;
     font-size: 8vh;
+    margin-bottom: 0;
+    line-height: 35px;
 }
 #head2{
+  font-family: 'Black Ops One', cursive;
     height: 8vh;
     color: #aa34de;
     font-size: 8vh;
