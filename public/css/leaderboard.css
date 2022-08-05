@@ -39,9 +39,10 @@
 }
 
 .inner-lead-card{
-    width: 45vw;
-    height: 60vh;
-    background-image: linear-gradient(to right, #CABBE9 0%, #B983FF 100%);
+
+    width: 50vw;
+    height: 80vh;
+    background-image: linear-gradient(to right, #B983FF 0%, #8A39E1 51%, #7A0BC0 100%);
     display: grid;
     grid-template-columns: 15% 65% 20%;
 }

@@ -191,8 +191,7 @@ a {
 }
 .grid-container-2{
     display: grid;
-    grid-template-columns: 25vw 74vw;
-    grid-template-rows: 10vh 7vh 5vh;
+    grid-template-columns: 33vw 33vw 33vw;
   }
 
   #grid-item-1{
@@ -209,17 +208,17 @@ a {
     grid-column: 2 / 3;
   }
   #grid-item-7{
-    height: 50%;
+    /* height: 50%; */
     position: relative;
-    margin-left: 45vw;
+    /* margin-left: 45vw; */
     color: white;
 
   }
 #grid-item-8{
-  height: 50%;
+  /* height: 50%; */
     position: relative;
-    margin-left: 15vw;
-    margin-top: -10vh;
+    /* margin-left: 15vw;
+    margin-top: -10vh; */
     color: white;
   }
 #grid-item-1 > a > img{
@@ -227,8 +226,20 @@ a {
     width: auto;
     display: block;
     margin: 7.5% auto;
+}
+#grid-item-9 > a > img{
+    /* height: 70%; */
+    width: 15vw;
+    /* height: 100px; */
+    /* width: 150px; */
+    display: block;
+    margin-left: 2vw;
+    /* margin: 7.5% auto; */
   }
-
+.footer>ul>li>a{
+  text-decoration: none;
+  color: inherit;
+}
 #login-signup {
     height: 7vh;
     width: 100%;

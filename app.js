@@ -16,6 +16,7 @@ import { User } from "./models/user.js";
 import ExpressError from "./utils/ExpressError.js";
 import catchAsync from "./utils/ExpressError.js";
 import { Server } from "socket.io";
+import nodemailer from "nodemailer";
 const PORT = process.env.PORT || 3000;
 const server = express()
   .use(app)
@@ -94,6 +95,38 @@ app.use((req, res, next) => {
   next();
 });
 
+
+
+app.post("/send_mail", catchAsync(async(req, res)=>{
+  console.log(req.body);
+  var transporter = nodemailer.createTransport({
+    host: 'smtp.gmail.com',
+    port: 465,
+    secure: true,
+  service: 'gmail',
+  auth: {
+    user: 'mailsender696969@gmail.com',
+    pass: 'apgudqrsyfzeaeeh'
+  }
+});
+
+var mailOptions = {
+  from: 'mailsender696969@gmail.com',
+  to: 'iitisocDevTeam@gmail.com',
+  subject: req.body.subject_for_mail,
+  text: `Name- ${req.body.Name}\n Email- ${req.body.email_for_mail}\n Text- ${req.body.text_mail}`
+};
+
+transporter.sendMail(mailOptions, function(error, info){
+  if (error) {
+    console.log(error);
+  } else {
+    console.log('Email sent: ' + info.response);
+  }
+});
+  res.redirect("/");
+}))
+
 app.get(
   "/",
   catchAsync(async (req, res) => {
@@ -107,6 +140,10 @@ app.get(
 //     console.log(data);
 //   });
 // });
+
+app.get("/contact", catchAsync(async(req, res)=>{
+  res.render("contact.ejs")
+}))
 app.get(
   "/tictactoe",
   catchAsync(async (req, res) => {
