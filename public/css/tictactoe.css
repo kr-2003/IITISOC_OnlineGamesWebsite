@@ -96,51 +96,6 @@ body{
 }
 
 
-.popover{
-	position: absolute;
-	top: 50%;
-	left: 50%;
-	margin-left: -200px;
-	margin-top: -150px;
-	box-sizing: border-box;
-	padding: 10px;
-	height: 130px;
-	width: 400px;
-	background: #f2f2f2;
-	z-index: 10000;
-	-webkit-border-radius: 5px;
-	-moz-border-radius: 5px;
-	border-radius: 5px;
-	-webkit-box-shadow: 0px 10px 43px -16px rgba(0,0,0,0.75);
-	-moz-box-shadow: 0px 10px 43px -16px rgba(0,0,0,0.75);
-	box-shadow: 0px 10px 43px -16px rgba(0,0,0,0.75);
-}
-
-.popover h2{
-	font-size: 24px;
-	padding: 0;
-	margin: 0;
-	line-height: 1.5em;
-}
-
-.popover p{
-	margin: 0;
-	padding: 0;
-	line-height: 2em;
-}
-
-.popover input{
-	position: absolute;
-	bottom: 10px;
-	width: 380px;
-	line-height: 2em;
-	font-size: 16px;
-	box-sizing: border-box;
-	padding: 0 10px;
-	border: 1px solid #333;
-	outline: none;
-}
-
 /* .status{
 	position: absolute;
 	bottom: 10px;
@@ -324,7 +279,10 @@ body{
 	z-index: 1000;
 }
 
-.popover{
+	.popover{
+	/* display: flex; */
+	/* align-items: center; */
+	/* justify-content: center; */
 	position: absolute;
 	top: 50%;
 	left: 50%;
@@ -332,9 +290,10 @@ body{
 	margin-top: -150px;
 	box-sizing: border-box;
 	padding: 10px;
-	height: 200px;
+	height: 170px;
 	width: 400px;
-	background: #f2f2f2;
+	background-image: linear-gradient(to right, #F1F2F2 0%, #BEBFC2 51%, #A7A9AC 100% );
+	color: black;
 	z-index: 10000;
 	-webkit-border-radius: 5px;
 	-moz-border-radius: 5px;
@@ -358,9 +317,6 @@ body{
 }
 
 .popover input{
-	position: absolute;
-    transform: translate(-50%, -200%);
-	bottom: 10px;
 	width: 380px;
 	line-height: 2em;
 	font-size: 16px;
@@ -368,13 +324,31 @@ body{
 	padding: 0 10px;
 	border: 1px solid #333;
 	outline: none;
-} 
-
-.popover a{
-	position: absolute;
-    transform: translate(-50%, 250%);
 }
 
+.popover a button{
+	margin-top: 10px;
+	height: 35px;
+	width: 120px;
+	background-image: linear-gradient(to right, #B983FF 0%, #8A39E1 51%, #7A0BC0 100%);
+	border: 1px solid;
+	color: white;
+	border-radius: 25px;
+	transition: transform 200ms ease-in-out;
+
+}
+
+.popover a button:hover{
+	transform: scale(1.1);
+	transition: transform 200ms ease-in-out;
+
+}
+
+.exit-div{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
 .status{
 	position: absolute;
 	bottom: 20px;

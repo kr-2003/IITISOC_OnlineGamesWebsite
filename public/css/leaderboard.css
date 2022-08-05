@@ -11,7 +11,7 @@
 .inner-lead-card{
     width: 50vw;
     height: 80vh;
-    background-color:rgb(99, 167, 167);
+    background-image: linear-gradient(to right, #B983FF 0%, #8A39E1 51%, #7A0BC0 100%);
     display: grid;
     grid-template-columns: 10% 70% 20%;
 }
