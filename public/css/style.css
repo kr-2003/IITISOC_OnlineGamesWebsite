@@ -461,8 +461,9 @@ a {
   }
   .end{
     margin-top: 5vh;
-    width: 66%;
+    width: 70%;
     color: #dadde1;
+    margin-left: 470px;
 }
 .copyright{
   text-align: center;
