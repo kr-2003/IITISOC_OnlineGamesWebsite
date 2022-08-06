@@ -554,9 +554,9 @@ a {
         .mycontainer{
           height: 80vh !important;
         }
-        .mycards{
+        /* .mycards{
             height: 100% !important;
-        }
+        } */
     }
     @media (max-width:620px) {
         .nav-links>div>a{
@@ -633,9 +633,9 @@ a {
             height: 125vh;
             color: #FAC213;
           }
-        #main_container-1{
+        /* #main_container-1{
           background-image: url("/images/background04.jpg");
-        }
+        } */
         .card_content{
           font-size: 2.5vw;
         }
@@ -643,14 +643,6 @@ a {
     @media only screen and (max-width: 600px) {
       .mycontainer{
         height: 100vh;
-      }
-      .mycards{
-        width: 85vw;
-        height: 62vh;
-      }
-      .mycard>img{
-        width: 85vw;
-        height: 62vh;
       }
     }
     @media (max-width: 991px) {
