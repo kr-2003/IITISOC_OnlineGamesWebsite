@@ -1,7 +1,13 @@
 @import url('https://fonts.googleapis.com/css2?family=Black+Ops+One&display=swap');
 
+/* html{
+  width: 10vw;
+} */
+
 body {
     background-color: #333;
+    width: 100%;
+    overflow-x: hidden;
 }
 
 .google-auth-btn{
@@ -24,14 +30,19 @@ i{
 #bg_body{
     height: 120vh;
     position: relative;
-    background-image: url("/images/bg-img.jpeg");
+    background-image: url("/images/bg-img4.jpg");
     background-repeat: no-repeat;
     background-size: 100% 100%;
+    width: 100vw;
+}
+
+.bg_leader{
+  background-image: url("/images/LeaderboardBg.jpg") !important;
 }
 #bg_body_2{
     height: 120vh;
     position: relative;
-    background-image: url("/images/bg-img.jpeg");
+    /* background-image: url("/images/bg-img.jpeg"); */
     background-repeat: no-repeat;
     background-size: 100% 100%;
 }
@@ -193,7 +204,7 @@ a {
 .menu_fixed {
   position: fixed;
   z-index: 9999 !important;
-  width: 100%;
+  width: 99%;
   box-shadow: 0px 10px 15px rgba(0, 0, 0, 0.05);
   top: 0;
   background-color: #222831 !important;
@@ -531,6 +542,10 @@ input[type=radio] {
     display: none;
 }
 
+.card{
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+}
+
 .mycard {
     position: absolute;
     width: 40%;
@@ -543,7 +558,7 @@ input[type=radio] {
   }
 
   .mycontainer {
-    width: 100%;
+    width: 98%;
     height: auto;
   transform-style: preserve-3d;
   margin: 5vh 0 0 0;
@@ -721,7 +736,7 @@ input[type=radio] {
         color: #FAC213;
       }
     #main_container-1{
-      background-image: url("/images/bg-img.jpeg");
+      /* background-image: url("/images/bg-img4.jpeg"); */
     }
     .card_content{
       font-size: 2.5vw;
@@ -804,7 +819,7 @@ input[type=radio] {
     width: 100%;
   }
 }
-@media only screen and (min-width: 768px) and (max-width: 991px) {
+@media (min-width: 768px) and (max-width: 991px) {
   .navbar-collapse {
     z-index: 9999 !important;
     position: absolute;
@@ -815,7 +830,17 @@ input[type=radio] {
     text-align: center !important;
   }
 }
-
+@media (max-width:400px){
+  #description{
+    margin-left: 5vw;
+  }
+  #head1{
+    font-size: 5vh;
+  }
+  #head2{
+    font-size: 5vh;
+  }
+}
 .game_head{
   text-align: center;
   padding-top: 40px;

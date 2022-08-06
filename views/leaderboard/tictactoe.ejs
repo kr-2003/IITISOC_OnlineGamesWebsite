@@ -15,6 +15,135 @@
 
     <link rel="stylesheet" href="/css/leaderboard.css">
 
+    
+    <style>
+/* A simple, css only, (some-what) responsive menu */
+
+a {
+  text-decoration: none;
+  color: #fff;
+  display: block;
+}
+
+ul {
+  list-style: none;
+  position: relative;
+  text-align: left;
+}
+
+li {
+  float: left;
+}
+
+/* clear'n floats */
+ul:after {
+  clear: both;
+}
+
+ul:before,
+ul:after {
+    content: " ";
+    display: table;
+}
+
+/* prime *
+
+/* subs */
+ul.sub {
+  position: absolute;
+  top: 58px;
+  z-index: 200;
+  box-shadow: 2px 2px 0 #BEBEBE;
+  width: 25%;
+  display:none;
+  background-color: #000;
+}
+
+ul.sub li {
+  float: none;
+  margin: 0;
+}
+
+ul.sub li a {
+  border-bottom: 1px dotted #ccc;
+  border-right: none;
+  padding: 15px 30px;
+}
+
+ul.sub li:last-child a {
+  border-bottom: none;
+}
+
+ul.sub li a:hover {
+  /* color: #000; */
+}
+
+/* sub display*/
+ul.primary li:hover ul {
+  display: block;
+  
+}
+
+ul li ul {
+  transition: display 2000ms ease-in;
+}
+
+/* keeps the tab background white */
+ul.primary li:hover a {
+  /* color: rgb(215, 80, 199); */
+  text-shadow: none;
+  transition: display 500ms ease-in;
+}
+
+
+@media only screen and (max-width: 600px) {
+  .decor {
+    padding: 3px;
+  }
+  
+  .wrap {
+    width: 100%;
+    margin-top: 0px;
+  }
+  
+   li {
+    float: none;
+  }
+  
+  ul.primary li:hover a {
+    background: none;
+    color: #8B8B8B;
+    text-shadow: 1px 1px #000;
+  }
+
+  ul.primary li:hover ul {
+    display: block;
+    background: #272727;
+    color: #fff;
+  }
+  
+  ul.sub {
+    display: block;  
+    position: static;
+    box-shadow: none;
+    width: 100%;
+  }
+  
+  ul.sub li a {
+    background: #272727;
+  	border: none;
+    color: #8B8B8B;
+  }
+  
+  ul.sub li a:hover {
+    color: #ccc;
+    background: none;
+  }
+}
+
+
+    </style>
+
 
     <link
       href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;500&family=Nunito+Sans:wght@200;300&family=Ubuntu:wght@300;500&display=swap"
@@ -34,7 +163,8 @@
     />
   </head>
   <body>
-    <div id="bg_body">
+
+    <div id="bg_body" class="bg_leader">
       <!-- NavBar  -->
 
       <header class="main_menu single_page_menu">
@@ -63,16 +193,30 @@
                   class="collapse navbar-collapse main-menu-item"
                   id="navbarSupportedContent"
                 >
-                  <ul class="navbar-nav">
+
+                  <ul class="navbar-nav primary">
                     <li class="nav-item nav-links diff">
                       <a class="nav-link" href="/">Home</a>
                     </li>
                     <li class="nav-item nav-links diff">
                       <a class="nav-link" href="/#redirect">Games</a>
                     </li>
+
                     <li class="nav-item nav-links diff">
-                      <a class="nav-link" href="leaderBoard/tictactoe">LeaderBoard</a>
+                      <a class="nav-link" href="">Leaderboard</a>
+                      <ul class="sub">
+                        <li><a href="/leaderboard/tictactoe" style="text-decoration:none">Tic Tac Toe</a></li>
+                        <li><a href="/leaderboard/connect4" style="text-decoration:none">Connect 4</a></li>
+                        <li><a href="/leaderboard/dotsandboxes" style="text-decoration:none">Dots and Boxes</a></li>
+                        <li><a href="/leaderboard/codenames" style="text-decoration:none">Codenames</a></li>
+                      </ul>
                     </li>
+
+    
+                    <!-- <li class="nav-item nav-links diff">
+                      <a class="nav-link" href="leaderBoard/tictactoe.ejs">LeaderBoard</a>
+                    </li> -->
+
                     <li class="nav-item nav-links diff">
                       <a class="nav-link" href="/about">About</a>
                     </li>
@@ -154,7 +298,9 @@
 
 
 
+
     <section id="section2" style="background-color: #0e1a23">
+
 
       <div id="background"></div>
       <hr size="5" class="hr" />
@@ -228,3 +374,4 @@
     <script src="/js/custom.js"></script>
   </body>
 </html>
+

@@ -1,10 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Black+Ops+One&display=swap');
 
 
+
 #bg_body{
   background-image: url("/images/bg-img4.jpg");
   height: 120vh;
 }
+
 .flower{
   color: #aa34de;
 }
