@@ -4,10 +4,12 @@
   width: 10vw;
 } */
 
-body {
+html, body {
     background-color: #333;
-    width: 100%;
+    /* width: 100%; */
+    max-width: 100%; 
     overflow-x: hidden;
+    padding: 0;
 }
 
 .google-auth-btn{
@@ -448,6 +450,7 @@ a {
 #content{
     color: #a6aeb9;
     font-size: 3.5vh;
+   
 }
 #letsplay{
     color: white;
@@ -492,16 +495,24 @@ a {
     margin-top: 5vh;
   }
 #container-mid{
-  margin: 10vh 10vw 7vh 10vw;
+  /* margin: 10vh 10vw 7vh 10vw; */
+  display: grid;
+  grid-template-columns: repeat(3, 33.33%);
+  color: white;
+  /* margin-bottom: 40px; */
 }
 #container-mid>div{
-    display: inline-block;
+    /* display: inline-block;
     width: 10vw;
     text-align: center;
-    margin: 0 7.5vw;
+    margin: 0 7.5vw; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 #container-mid>div>p{
-    font-size: 1.5vw;
+    /* font-size: 1.5vw; */
+    color: white;
   }
 #container-mid>div>i{
   color: white;
@@ -666,7 +677,7 @@ input[type=radio] {
       margin: 0;
     }
   #container-mid>div>p{
-      font-size: 2vw;
+      /* font-size: 2vw; */
     }
     .card_content{
       font-size: 1.5vw;
@@ -704,16 +715,16 @@ input[type=radio] {
     font-size: 2em !important;
   }
   #container-mid{
-      margin-left: 10vw;
+      /* margin-left: 10vw; */
   }
   #container-mid>div{
-    margin: 0 7.5vw;
+    /* margin: 0 7.5vw; */
   }
   #login-signup{
       margin-left: 30vw;
   }
   #container-mid>div>p{
-      font-size: 3vw;
+      /* font-size: 3vw; */
   }
   /* .card_content{
       font-size: 2vw;
@@ -731,6 +742,15 @@ input[type=radio] {
     }
 }
 @media (max-width:560px) {
+  #container-mid{
+    display: grid;
+    grid-template-columns: repeat(1, 100%);
+    grid-template-rows: repeat(3, 33.333%);
+  }
+
+  #container-mid>div{
+    margin-bottom: 20px;
+  }
   #login-signup{
       margin-left: 15vw;
     }
@@ -782,20 +802,23 @@ input[type=radio] {
     overflow-y: auto;
   }
   #contact{
-    padding-left: 140px;
     padding-bottom: 20px;
+    display: grid;
+    grid-template-rows: repeat(2, 50%);
   }
   #games{
-    padding-left: 140px;
-    padding-bottom: 20px;
+    /* padding-left: 140px;
+    padding-bottom: 20px; */
   }
   #reviews{
-    padding-left: 140px;
+    /* padding-left: 140px; */
   }
   #container-mid>div>p{
-    font-size: 4vw;
+    /* font-size: 4vw; */
       margin-left: -15px;
   }
+
+  .cot
   #section2{
       height: 120vh;
       color: #FAC213;
@@ -952,4 +975,13 @@ body {
     width: 100%;
     overflow-x: hidden;
 }
+}
+
+@media(max-width: 470px){
+  #head1{
+    font-size: 50px;
+  }
+  #head2{
+    font-size: 50px;
+  }
 }
