@@ -4,12 +4,36 @@
   width: 10vw;
 } */
 
+
 html, body {
     background-color: #333;
     /* width: 100%; */
     max-width: 100%; 
     overflow-x: hidden;
     padding: 0;
+}
+
+.leader-menu{
+  background-color: white;
+  width: 130px;
+  text-align: left;
+  display: none;
+  pointer-events: none;
+  bottom: 10px;
+}
+
+.leader-menu li{
+  text-align: left;
+}
+
+.leader-menu:focus> .leader-menu{
+  display: block;
+  pointer-events: all;
+}
+
+.leader-menu li:focus> .leader-menu{
+  display: block;
+  pointer-events: all;
 }
 
 .google-auth-btn{
@@ -676,9 +700,7 @@ input[type=radio] {
   .nav>.nav-links{
       margin: 0;
     }
-  #container-mid>div>p{
-      /* font-size: 2vw; */
-    }
+  
     .card_content{
       font-size: 1.5vw;
     }
@@ -714,19 +736,7 @@ input[type=radio] {
   .icons{
     font-size: 2em !important;
   }
-  #container-mid{
-      /* margin-left: 10vw; */
-  }
-  #container-mid>div{
-    /* margin: 0 7.5vw; */
-  }
-  #login-signup{
-      margin-left: 30vw;
-  }
-  #container-mid>div>p{
-      /* font-size: 3vw; */
-  }
-  /* .card_content{
+  rd_content{
       font-size: 2vw;
   } */
   /* .mycontainer{
@@ -805,13 +815,6 @@ input[type=radio] {
     padding-bottom: 20px;
     display: grid;
     grid-template-rows: repeat(2, 50%);
-  }
-  #games{
-    /* padding-left: 140px;
-    padding-bottom: 20px; */
-  }
-  #reviews{
-    /* padding-left: 140px; */
   }
   #container-mid>div>p{
     /* font-size: 4vw; */
