@@ -29,6 +29,10 @@ let gameMap = {};
 let userMap = undefined;
 const dbUrl = process.env.DB_URL;
 import collect from "collect.js";
+import { Strategy as GoogleStrategy } from "passport-google-oauth2";
+const GOOGLE_CLIENT_ID = process.env.GOOGLE_CLIENT_ID;
+const GOOGLE_CLIENT_SECRET = process.env.GOOGLE_CLIENT_SECRET;
+import bodyParser from "body-parser";
 
 mongoose
   .connect(dbUrl, {
@@ -76,12 +80,15 @@ app.set("views", path.join(__dirname, "views"));
 // app.set('views', './src/views');
 
 app.set("view engine", "ejs");
+app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.urlencoded({ extended: true }));
+
 app.use(methodOverride("_method"));
 app.use(express.static("public"));
 app.use(passport.initialize());
 app.use(passport.session());
 passport.use(new LocalStrategy(User.authenticate()));
+// passport.use(new GoogleStrategy(User.authenticate()));
 passport.serializeUser(User.serializeUser());
 passport.deserializeUser(User.deserializeUser());
 let currentUser;
@@ -95,37 +102,76 @@ app.use((req, res, next) => {
   next();
 });
 
+passport.use(
+  new GoogleStrategy(
+    {
+      clientID: GOOGLE_CLIENT_ID,
+      clientSecret: GOOGLE_CLIENT_SECRET,
+      callbackURL: "http://localhost:5001/auth/google/callback",
+    },
+    function (accessToken, refreshToken, profile, cb) {
+      User.findOrCreate(
+        {
+          googleId: profile.id,
+          username: profile.displayName,
+          email: profile.email,
+        },
+        function (err, user) {
+          return cb(err, user);
+        }
+      );
+    }
+  )
+);
 
+app.get(
+  "/auth/google",
+  passport.authenticate("google", {
+    scope: ["profile", "email"],
+  })
+);
 
-app.post("/send_mail", catchAsync(async(req, res)=>{
-  console.log(req.body);
-  var transporter = nodemailer.createTransport({
-    host: 'smtp.gmail.com',
-    port: 465,
-    secure: true,
-  service: 'gmail',
-  auth: {
-    user: 'mailsender696969@gmail.com',
-    pass: 'apgudqrsyfzeaeeh'
+app.get(
+  "/auth/google/callback",
+  passport.authenticate("google", { failureRedirect: "/login" }),
+  function (req, res) {
+    // Successful authentication, redirect home.
+    res.redirect("/");
   }
-});
+);
 
-var mailOptions = {
-  from: 'mailsender696969@gmail.com',
-  to: 'iitisocDevTeam@gmail.com',
-  subject: req.body.subject_for_mail,
-  text: `Name- ${req.body.Name}\n Email- ${req.body.email_for_mail}\n Text- ${req.body.text_mail}`
-};
+app.post(
+  "/send_mail",
+  catchAsync(async (req, res) => {
+    console.log(req.body);
+    var transporter = nodemailer.createTransport({
+      host: "smtp.gmail.com",
+      port: 465,
+      secure: true,
+      service: "gmail",
+      auth: {
+        user: "mailsender696969@gmail.com",
+        pass: "apgudqrsyfzeaeeh",
+      },
+    });
 
-transporter.sendMail(mailOptions, function(error, info){
-  if (error) {
-    console.log(error);
-  } else {
-    console.log('Email sent: ' + info.response);
-  }
-});
-  res.redirect("/");
-}))
+    var mailOptions = {
+      from: "mailsender696969@gmail.com",
+      to: "iitisocDevTeam@gmail.com",
+      subject: req.body.subject_for_mail,
+      text: `Name- ${req.body.Name}\n Email- ${req.body.email_for_mail}\n Text- ${req.body.text_mail}`,
+    };
+
+    transporter.sendMail(mailOptions, function (error, info) {
+      if (error) {
+        console.log(error);
+      } else {
+        console.log("Email sent: " + info.response);
+      }
+    });
+    res.redirect("/");
+  })
+);
 
 app.get(
   "/",
@@ -141,9 +187,12 @@ app.get(
 //   });
 // });
 
-app.get("/contact", catchAsync(async(req, res)=>{
-  res.render("contact.ejs")
-}))
+app.get(
+  "/contact",
+  catchAsync(async (req, res) => {
+    res.render("contact.ejs");
+  })
+);
 app.get(
   "/tictactoe",
   catchAsync(async (req, res) => {
@@ -268,7 +317,7 @@ app.get(
         .sort({ codenames: -1 })
         .limit(10)
     ).toArray();
-    res.render("leaderboard/codenames.ejs", { game,leaderboardUsers });
+    res.render("leaderboard/codenames.ejs", { game, leaderboardUsers });
   })
 );
 
@@ -1002,6 +1051,8 @@ app.post(
     res.redirect(redirectUrl);
   })
 );
+
+app.use(express.json());
 
 app.all("*", (req, res, next) => {
   next(new ExpressError("Page Not Found", 404));

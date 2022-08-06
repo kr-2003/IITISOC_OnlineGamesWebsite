@@ -4,20 +4,34 @@ body {
     background-color: #333;
 }
 
-.waste:hover{
-  color: green;
+.google-auth-btn{
+  margin-top: 40px;
+  text-align: center;
+  width: 100%;
+  border: 1px solid;
+  text-decoration: none;
+  color: white;
+}
+
+.google-auth-btn:hover{
+  background-color: white;
+  color: black;
+}
+
+i{
+  margin: 10px;
 }
 #bg_body{
     height: 115vh;
     position: relative;
-    background-image: url("/images/background.jpg");
+    background-image: url("/images/bg-img.jpeg");
     background-repeat: no-repeat;
     background-size: 100% 100%;
 }
 #bg_body_2{
     height: 120vh;
     position: relative;
-    background-image: url("/images/games_back.png");
+    background-image: url("/images/bg-img.jpeg");
     background-repeat: no-repeat;
     background-size: 100% 100%;
 }
@@ -677,7 +691,7 @@ input[type=radio] {
         color: #FAC213;
       }
     #main_container-1{
-      background-image: url("/images/background04.jpg");
+      background-image: url("/images/bg-img.jpeg");
     }
     .card_content{
       font-size: 2.5vw;
