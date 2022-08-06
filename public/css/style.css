@@ -809,6 +809,12 @@ input[type=radio] {
   #bg_body{
     background-image: url("/images/bg-img4.jpeg");
   }
+
+  body {
+    background-color: #333;
+    width: 100%;
+    overflow-x: hidden;
+}
 }
 @media (max-width: 600px) {
 .mycontainer{
@@ -912,12 +918,23 @@ input[type=radio] {
 #head2{
   font-size: 5vh;
 }
+body {
+  background-color: #333;
+  width: 100%;
+  overflow-x: hidden;
+}
 }
 
 @media(max-width: 760px){
   .mycards{
     height: 55vh !important;
   }
+
+  body {
+    background-color: #333;
+    width: 100%;
+    overflow-x: hidden;
+}
 }
 
 @media(max-width: 600px){
@@ -929,4 +946,10 @@ input[type=radio] {
   .mycard{
     width: 260px;
   }
+
+  body {
+    background-color: #333;
+    width: 100%;
+    overflow-x: hidden;
+}
 }
