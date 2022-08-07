@@ -905,6 +905,7 @@ const history = async (status, game, winner, loser) => {
     winner: winner,
     loser: loser,
   });
+  
   await player1.save();
   player2.history.unshift({
     game: game,
