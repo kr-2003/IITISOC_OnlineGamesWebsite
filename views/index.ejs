@@ -1,21 +1,18 @@
 <% layout("layout/boilerplate.ejs") %>
 
-
 <section id="main_section">
   <div class="container-fluid" id="main_container-1">
     <div id="description">
       <p id="head1">ENGAGING THROUGH</p>
       <p id="head2">PLAY</p>
       <p id="content">
-        Our Games Will Entertain Millions <br />of People Everywhere
-        Everyday
+        Our Games Will Entertain Millions <br />of People Everywhere Everyday
       </p>
       <a href="#redirect">
-      <div id="letsplay">
-        Let's Play <i class="fa-solid fa-gamepad fa-lg"></i>
-      </div>
-    </a>
-      
+        <div id="letsplay">
+          Let's Play <i class="fa-solid fa-gamepad fa-lg"></i>
+        </div>
+      </a>
     </div>
   </div>
 </section>
@@ -43,140 +40,152 @@ viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
 </div> -->
 <!--Header ends-->
 
-
- <!-- CARAUSAL SECTION -->
-<div
-id="carouselExampleIndicators"
-class="carousel slide"
-data-bs-ride="true"
->
-<div class="carousel-indicators">
+<!-- CARAUSAL SECTION -->
+<div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="true">
+  <div class="carousel-indicators">
+    <button
+      type="button"
+      data-bs-target="#carouselExampleIndicators"
+      data-bs-slide-to="0"
+      class="active"
+      aria-current="true"
+      aria-label="Slide 1"
+    ></button>
+    <button
+      type="button"
+      data-bs-target="#carouselExampleIndicators"
+      data-bs-slide-to="1"
+      aria-label="Slide 2"
+    ></button>
+    <button
+      type="button"
+      data-bs-target="#carouselExampleIndicators"
+      data-bs-slide-to="2"
+      aria-label="Slide 3"
+    ></button>
+  </div>
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img src="/images/caraousal1.png" class="d-block w-100" alt="..." />
+    </div>
+    <div class="carousel-item">
+      <img src="/images/caraousal2.png" class="d-block w-100" alt="..." />
+    </div>
+    <div class="carousel-item">
+      <img src="/images/caraousal3.png" class="d-block w-100" alt="..." />
+    </div>
+  </div>
   <button
+    class="carousel-control-prev"
     type="button"
     data-bs-target="#carouselExampleIndicators"
-    data-bs-slide-to="0"
-    class="active"
-    aria-current="true"
-    aria-label="Slide 1"
-  ></button>
+    data-bs-slide="prev"
+  >
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
   <button
+    class="carousel-control-next"
     type="button"
     data-bs-target="#carouselExampleIndicators"
-    data-bs-slide-to="1"
-    aria-label="Slide 2"
-  ></button>
-  <button
-    type="button"
-    data-bs-target="#carouselExampleIndicators"
-    data-bs-slide-to="2"
-    aria-label="Slide 3"
-  ></button>
-</div>
-<div class="carousel-inner">
-  <div class="carousel-item active">
-    <img src="/images/caraousal1.png" class="d-block w-100" alt="..." />
-  </div>
-  <div class="carousel-item">
-    <img src="/images/caraousal2.png" class="d-block w-100" alt="..." />
-  </div>
-  <div class="carousel-item">
-    <img src="/images/caraousal3.png" class="d-block w-100" alt="..." />
-  </div>
-</div>
-<button
-  class="carousel-control-prev"
-  type="button"
-  data-bs-target="#carouselExampleIndicators"
-  data-bs-slide="prev"
->
-  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-  <span class="visually-hidden">Previous</span>
-</button>
-<button
-  class="carousel-control-next"
-  type="button"
-  data-bs-target="#carouselExampleIndicators"
-  data-bs-slide="next"
->
-  <span class="carousel-control-next-icon" aria-hidden="true"></span>
-  <span class="visually-hidden">Next</span>
-</button>
+    data-bs-slide="next"
+  >
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
 </div>
 
 <!-- GAMES -->
 
 <section id="main_section" class="games_section">
-<h1 id="redirect" class="game_head">GAM<span class="hi">ES</span></h1>
-<div class="mycontainer game_slides">
-  <input type="radio" name="slider" id="item-1" checked />
-  <input type="radio" name="slider" id="item-2" />
-  <input type="radio" name="slider" id="item-3" />
-  <input type="radio" name="slider" id="item-4" />
-  <div class="mycards">
-    <label class="mycard" for="item-1" id="game_card-1">
-      <div class="card cardz" style="width: 100%; height: 100%">
-        <img
-          src="/images/games/tictactoe2.png"
-          class="card-img-top"
-          alt="..."
-        />
-        <div class="card-body">
-          <h5 class="card-title">TIC TAC TOE</h5>
-          <p class="card-text card_content">
-            Some quick example text to build on the card title.
-          </p>
-          <a href="/tictactoe" class="btn btn-primary">Play Game</a>
+  <h1 id="redirect" class="game_head">GAM<span class="hi">ES</span></h1>
+  <div class="mycontainer game_slides">
+    <input type="radio" name="slider" id="item-1" checked />
+    <input type="radio" name="slider" id="item-2" />
+    <input type="radio" name="slider" id="item-3" />
+    <input type="radio" name="slider" id="item-4" />
+    <input type="radio" name="slider" id="item-5" />
+    <div class="mycards">
+      <label class="mycard" for="item-1" id="game_card-1">
+        <div class="card cardz" style="width: 100%; height: 100%">
+          <img
+            src="/images/games/tictactoe2.png"
+            class="card-img-top"
+            alt="..."
+          />
+          <div class="card-body">
+            <h5 class="card-title">TIC TAC TOE</h5>
+            <p class="card-text card_content">
+              Some quick example text to build on the card title.
+            </p>
+            <a href="/tictactoe" class="btn btn-primary">Play Game</a>
+          </div>
         </div>
-      </div>
-    </label>
-    <label class="mycard" for="item-2" id="game_card-2">
-      <div class="card cardz" style="width: 100%; height: 100%">
-        <img
-          src="/images/games/connect4.png"
-          class="card-img-top"
-          alt="..."
-        />
-        <div class="card-body">
-          <h5 class="card-title">CONNECT 4</h5>
-          <p class="card-text card_content">
-            Some quick example text to build on the card title.
-          </p>
-          <a href="/connect4" class="btn btn-primary">Play Game</a>
+      </label>
+      <label class="mycard" for="item-2" id="game_card-2">
+        <div class="card cardz" style="width: 100%; height: 100%">
+          <img
+            src="/images/games/connect4.png"
+            class="card-img-top"
+            alt="..."
+          />
+          <div class="card-body">
+            <h5 class="card-title">CONNECT 4</h5>
+            <p class="card-text card_content">
+              Some quick example text to build on the card title.
+            </p>
+            <a href="/connect4" class="btn btn-primary">Play Game</a>
+          </div>
         </div>
-      </div>
-    </label>
-    <label class="mycard" for="item-3" id="game_card-3">
-      <div class="card cardz" style="width: 100%; height: 100%">
-        <img
-          src="/images/games/dotsandboxes.png"
-          class="card-img-top"
-          alt="..."
-        />
-        <div class="card-body">
-          <h5 class="card-title">DOTS AND BOXES</h5>
-          <p class="card-text card_content">
-            Some quick example text to build on the card title.
-          </p>
-          <a href="/dotsAndBoxes" class="btn btn-primary">Play Game</a>
+      </label>
+      <label class="mycard" for="item-3" id="game_card-3">
+        <div class="card cardz" style="width: 100%; height: 100%">
+          <img
+            src="/images/games/dotsandboxes.png"
+            class="card-img-top"
+            alt="..."
+          />
+          <div class="card-body">
+            <h5 class="card-title">DOTS AND BOXES</h5>
+            <p class="card-text card_content">
+              Some quick example text to build on the card title.
+            </p>
+            <a href="/dotsAndBoxes" class="btn btn-primary">Play Game</a>
+          </div>
         </div>
-      </div>
-    </label>
-    <label class="mycard" for="item-4" id="game_card-4">
-      <div class="card cardz" style="width: 100%; height: 100%">
-        <img
-          src="/images/games/codenames2.jpeg"
-          class="card-img-top"
-          alt="..."
-        />
-        <div class="card-body">
-          <h5 class="card-title">CODENAMES</h5>
-          <p class="card-text card_content">
-            Some quick example text to build on the card title.
-          </p>
-          <a href="/codenames" class="btn btn-primary">Play Game</a>
+      </label>
+      <label class="mycard" for="item-4" id="game_card-4">
+        <div class="card cardz" style="width: 100%; height: 100%">
+          <img
+            src="/images/games/codenames2.jpeg"
+            class="card-img-top"
+            alt="..."
+          />
+          <div class="card-body">
+            <h5 class="card-title">CODENAMES</h5>
+            <p class="card-text card_content">
+              Some quick example text to build on the card title.
+            </p>
+            <a href="/codenames" class="btn btn-primary">Play Game</a>
+          </div>
         </div>
-      </div>
-    </label>
+      </label>
+      <label class="mycard" for="item-5" id="game_card-5">
+        <div class="card cardz" style="width: 100%; height: 100%">
+          <img
+            src="/images/games/skribbl.webp"
+            class="card-img-top"
+            alt="..."
+          />
+          <div class="card-body">
+            <h5 class="card-title">SKRIBBL</h5>
+            <p class="card-text card_content">
+              Some quick example text to build on the card title.
+            </p>
+            <a href="https://gamehubiiti-skribbl.herokuapp.com/" class="btn btn-primary">Play Game</a>
+          </div>
+        </div>
+      </label>
+    </div>
   </div>
-</div>
 </section>

@@ -617,24 +617,24 @@ input[type=radio] {
     height: 60%;
     border-radius: 10px;
 }
-#item-1:checked ~ .mycards #game_card-4, #item-2:checked ~ .mycards #game_card-1, #item-3:checked ~ .mycards #game_card-2, #item-4:checked ~ .mycards #game_card-3 {
+#item-1:checked ~ .mycards #game_card-5, #item-2:checked ~ .mycards #game_card-1, #item-3:checked ~ .mycards #game_card-2, #item-4:checked ~ .mycards #game_card-3, #item-5:checked ~ .mycards #game_card-4 {
     transform: translatex(-80%) scale(0.8);
     opacity: 0.7;
     z-index: 0;
   }
 
-#item-1:checked ~ .mycards #game_card-2, #item-2:checked ~ .mycards #game_card-3, #item-3:checked ~ .mycards #game_card-4, #item-4:checked ~ .mycards #game_card-1 {
+#item-1:checked ~ .mycards #game_card-2, #item-2:checked ~ .mycards #game_card-3, #item-3:checked ~ .mycards #game_card-4, #item-4:checked ~ .mycards #game_card-5, #item-5:checked ~ .mycards #game_card-1  {
     transform: translatex(80%) scale(0.8);
     opacity: 0.7;
     z-index: 0;
 }
 
-#item-1:checked ~ .mycards #game_card-1, #item-2:checked ~ .mycards #game_card-2, #item-3:checked ~ .mycards #game_card-3, #item-4:checked ~ .mycards #game_card-4 {
+#item-1:checked ~ .mycards #game_card-1, #item-2:checked ~ .mycards #game_card-2, #item-3:checked ~ .mycards #game_card-3, #item-4:checked ~ .mycards #game_card-4, #item-5:checked ~ .mycards #game_card-5  {
   transform: translatex(0) scale(1);
   opacity: 1;
     z-index: 1;
 }
-#item-1:checked ~ .mycards #game_card-1 img, #item-2:checked ~ .mycards #game_card-2 img, #item-3:checked ~ .mycards #game_card-3 img, #item-4:checked ~ .mycards #game_card-4 img {
+#item-1:checked ~ .mycards #game_card-1 img, #item-2:checked ~ .mycards #game_card-2 img, #item-3:checked ~ .mycards #game_card-3 img, #item-4:checked ~ .mycards #game_card-4 img, #item-5:checked ~ .mycards #game_card-5 img {
     box-shadow: 0px 0px 5px 0px rgba(81, 81, 81, 0.47);
   }
 
