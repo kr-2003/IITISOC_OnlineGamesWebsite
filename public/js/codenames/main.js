@@ -1,4 +1,5 @@
-const socket = io("http://localhost:3000");
+
+const socket = io("https://gamehubiiti.herokuapp.com/");
 let createButton = document.getElementById('create-room-button')
 let joinButton = document.getElementById('join-room-button')
 let customWordsButton = document.getElementById('custom-words-button')
