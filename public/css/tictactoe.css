@@ -327,7 +327,7 @@ body{
 }
 
 .popover a button{
-	margin-top: 10px;
+	margin: 10px;
 	height: 35px;
 	width: 120px;
 	background-image: linear-gradient(to right, #B983FF 0%, #8A39E1 51%, #7A0BC0 100%);

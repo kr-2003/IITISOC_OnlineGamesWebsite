@@ -54,7 +54,7 @@ ul:after {
 /* subs */
 ul.sub {
   position: absolute;
-  top: 58px;
+  top: 55px;
   z-index: 200;
   box-shadow: 2px 2px 0 #BEBEBE;
   width: 25%;
@@ -68,9 +68,8 @@ ul.sub li {
 }
 
 ul.sub li a {
-  border-bottom: 1px dotted #ccc;
   border-right: none;
-  padding: 15px 30px;
+  padding: 15px 0;
 }
 
 ul.sub li:last-child a {
@@ -139,6 +138,20 @@ ul.primary li:hover a {
     color: #ccc;
     background: none;
   }
+}
+
+@media (max-width: 992px){
+  ul.sub {
+  position: absolute;
+  margin-top: -10px;
+  left: 60%;
+  z-index: 200;
+  box-shadow: 2px 2px 0 #BEBEBE;
+  width: 40%;
+  display:none;
+  background-color: #000;
+  text-align: center;
+}
 }
 
 
@@ -215,10 +228,10 @@ ul.primary li:hover a {
                       <a class="nav-link" href="#">Leaderboard</a>
 
                       <ul class="sub">
-                        <li><a href="/leaderboard/tictactoe" style="text-decoration:none">Tic Tac Toe</a></li>
-                        <li><a href="/leaderboard/connect4" style="text-decoration:none">Connect 4</a></li>
-                        <li><a href="/leaderboard/dotsandboxes" style="text-decoration:none">Dots and Boxes</a></li>
-                        <li><a href="/leaderboard/codenames" style="text-decoration:none">Codenames</a></li>
+                        <li class=""><a href="/leaderboard/tictactoe" style="text-decoration:none">Tic Tac Toe</a></li>
+                        <li class=""><a href="/leaderboard/connect4" style="text-decoration:none">Connect 4</a></li>
+                        <li class=""><a href="/leaderboard/dotsandboxes" style="text-decoration:none">Dots and Boxes</a></li>
+                        <li class=""><a href="/leaderboard/codenames" style="text-decoration:none">Codenames</a></li>
                       </ul>
 
                     </li>
