@@ -330,6 +330,12 @@ a {
     /* margin: 7.5% auto; */
   }
 
+.waste{
+  display: inline-block;
+}
+/* .footer{
+  height: 100%;
+} */
 /*  .headersss {
     padding-top: 25vh;
     position:relative;
@@ -543,7 +549,7 @@ a {
 
 
 #section2{
-    height: 80vh;
+    height: 62vh;
   }
   #section2>#container-mid>div{
     color: #FAC213 !important;
@@ -565,23 +571,38 @@ a {
   display: grid;
   grid-template-columns: repeat(3, 33.33%);
   color: white;
+  /* height: 400px; */
   /* margin-bottom: 40px; */
 }
 #container-mid>div{
-    /* display: inline-block;
-    width: 10vw;
+    display: inline-block;
+    /* width: 10vw;
     text-align: center;
     margin: 0 7.5vw; */
-    display: flex;
+    /* display: flex; */
+    text-align: center;
     align-items: center;
     justify-content: center;
-}
-#container-mid>div>p{
+  }
+  #container-mid>div>p{
     /* font-size: 1.5vw; */
-    color: white;
+    /* color: white; */
+    color: #FAC213;
+    /* float: left; */
+    text-align: center;
+  }
+  #container-mid>div>p:hover{
+    color: yellow !important;
   }
 #container-mid>div>i{
   color: white;
+  align-items: center;
+}
+.footer_links{
+  color: inherit;
+}
+.footer_links:hover{
+  color: yellow;
 }
 #hr2{
     width: 50%;
@@ -599,9 +620,11 @@ a {
     margin-left: 470px;
 }
 .copyright{
+  bottom: 0;
   text-align: center;
-    background-color: #0E1A23;
-    padding-bottom: 1vh;
+    /* background-color: #0E1A23; */
+    background-color: #2b2c2c;
+    /* padding-bottom: 1vh; */
     color: #dadde1;
 }
 
@@ -706,7 +729,12 @@ input[type=radio] {
 .hi{
   color: #8A39E1;
 }
-
+.footer_links{
+  text-align: center;
+}
+.footer_links>a{
+  color: inherit;
+}
 
 /* Profile Css */
 /*.row{
@@ -736,8 +764,12 @@ input[type=radio] {
   padding-top: 20px;
 }
 
-
-
+a{
+  text-decoration: none !important;
+}
+/* .footer>ul>li{
+  display: inline-block;
+} */
 @media (max-width:1180px) {
   .nav>.nav-links{
       margin: 0;
@@ -803,6 +835,9 @@ input[type=radio] {
   #container-mid>div{
     margin-bottom: 20px;
   }
+  #container-mid>div>i{
+    margin-right: 25px;
+  }
   #login-signup{
       margin-left: 15vw;
     }
@@ -863,9 +898,9 @@ input[type=radio] {
       margin-left: -15px;
   }
 
-  .cot
+  /* .cot */
   #section2{
-      height: 120vh;
+      height: 105vh;
       color: #FAC213;
     }
   #main_container-1{
