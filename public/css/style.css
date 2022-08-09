@@ -330,6 +330,10 @@ a {
     /* margin: 7.5% auto; */
   }
 
+  .waste{
+    display: inline-block;
+  }
+
 /*  .headersss {
     padding-top: 25vh;
     position:relative;
@@ -488,7 +492,7 @@ a {
   }
 .login{
   margin: 15px 0 0 2vw;
-  height: 50px;
+  height: 100%;
 }
 .signup{
   width: 150px;
@@ -543,7 +547,7 @@ a {
 
 
 #section2{
-    height: 80vh;
+    height: 62vh;
   }
   #section2>#container-mid>div{
     color: #FAC213 !important;
@@ -568,21 +572,37 @@ a {
   /* margin-bottom: 40px; */
 }
 #container-mid>div{
+  display: inline-block;
     /* display: inline-block;
     width: 10vw;
     text-align: center;
     margin: 0 7.5vw; */
-    display: flex;
+    /* display: flex; */
+    
+    text-align: center;
     align-items: center;
     justify-content: center;
 }
 #container-mid>div>p{
     /* font-size: 1.5vw; */
-    color: white;
+    color: #FAC213;
+    /* float: left; */
+    text-align: center;
   }
-#container-mid>div>i{
-  color: white;
-}
+
+  #container-mid>div>p:hover{
+    color: yellow !important;
+  }
+  #container-mid>div>i{
+    color: white;
+    align-items: center;
+  }
+  .footer_links{
+    color: inherit;
+  }
+  .footer_links:hover{
+    color: yellow;
+  }
 #hr2{
     width: 50%;
     margin-left: 25%;
@@ -599,9 +619,11 @@ a {
     margin-left: 470px;
 }
 .copyright{
+  bottom: 0;
   text-align: center;
-    background-color: #0E1A23;
-    padding-bottom: 1vh;
+    /* background-color: #0E1A23; */
+    background-color: #2b2c2c;
+    /* padding-bottom: 1vh; */
     color: #dadde1;
 }
 
@@ -706,6 +728,12 @@ input[type=radio] {
 .hi{
   color: #8A39E1;
 }
+.footer_links{
+  text-align: center;
+}
+.footer_links>a{
+  color: inherit;
+}
 
 
 /* Profile Css */
@@ -713,7 +741,35 @@ input[type=radio] {
   background-image: url("/images/gamesbg.png");
     color: black;
 }*/
+.card-body{
+  padding-top: 40px;
+}
+.heyy{
+  text-align: center;
+}
+.cardio{
+  padding-bottom: 100px;
+}
+.carded{
+  padding-bottom: 95px;
+}
+.card{
+  background-image: url("/images/gamesbg.png");
+  color: white;
+  width: 100%;
+}
+.carding{
+  margin-bottom: 50px;
+  padding-bottom: 160px;
+  padding-top: 20px;
+}
 
+a{
+  text-decoration: none !important;
+}
+/* .footer>ul>li{
+  display: inline-block;
+} */
 
 
 @media (max-width:1180px) {
@@ -781,6 +837,9 @@ input[type=radio] {
   #container-mid>div{
     margin-bottom: 20px;
   }
+  #container-mid>div>i{
+    margin-right: 25px;
+  }
   #login-signup{
       margin-left: 15vw;
     }
@@ -841,9 +900,9 @@ input[type=radio] {
       margin-left: -15px;
   }
 
-  .cot
+  /* .cot */
   #section2{
-      height: 120vh;
+      height: 105vh;
       color: #FAC213;
     }
   #main_container-1{

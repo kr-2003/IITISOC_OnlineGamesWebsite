@@ -54,12 +54,13 @@ ul:after {
 /* subs */
 ul.sub {
   position: absolute;
-  top: 55px;
+  top: 58px;
   z-index: 200;
   box-shadow: 2px 2px 0 #BEBEBE;
   width: 25%;
   display:none;
-  background-color: #000;
+  background-color: #222831;
+  color: white;
 }
 
 ul.sub li {
@@ -68,8 +69,13 @@ ul.sub li {
 }
 
 ul.sub li a {
+  border-bottom: 1px dotted #ccc;
   border-right: none;
-  padding: 15px 0;
+  padding: 15px 30px;
+  color: white;
+}
+ul.sub li a:hover{
+  color: #6E3CBC;
 }
 
 ul.sub li:last-child a {
@@ -143,14 +149,26 @@ ul.primary li:hover a {
 @media (max-width: 992px){
   ul.sub {
   position: absolute;
-  margin-top: -10px;
-  left: 60%;
+  top: 78px;
+  left: 55%;
   z-index: 200;
   box-shadow: 2px 2px 0 #BEBEBE;
-  width: 40%;
+  width: 45%;
   display:none;
-  background-color: #000;
-  text-align: center;
+  background-color: #222831;
+}
+}
+
+@media (max-width: 424px){
+  ul.sub {
+  position: absolute;
+  top: 78px;
+  left: 45%;
+  z-index: 200;
+  box-shadow: 2px 2px 0 #BEBEBE;
+  width: 65%;
+  display:none;
+  background-color: #222831;
 }
 }
 
@@ -228,10 +246,10 @@ ul.primary li:hover a {
                       <a class="nav-link" href="#">Leaderboard</a>
 
                       <ul class="sub">
-                        <li class=""><a href="/leaderboard/tictactoe" style="text-decoration:none">Tic Tac Toe</a></li>
-                        <li class=""><a href="/leaderboard/connect4" style="text-decoration:none">Connect 4</a></li>
-                        <li class=""><a href="/leaderboard/dotsandboxes" style="text-decoration:none">Dots and Boxes</a></li>
-                        <li class=""><a href="/leaderboard/codenames" style="text-decoration:none">Codenames</a></li>
+                        <li><a href="/leaderboard/tictactoe" style="text-decoration:none">Tic Tac Toe</a></li>
+                        <li><a href="/leaderboard/connect4" style="text-decoration:none">Connect 4</a></li>
+                        <li><a href="/leaderboard/dotsandboxes" style="text-decoration:none">Dots and Boxes</a></li>
+                        <li><a href="/leaderboard/codenames" style="text-decoration:none">Codenames</a></li>
                       </ul>
 
                     </li>
@@ -347,22 +365,30 @@ ul.primary li:hover a {
         </div>
         <div id="grid-item-7">
           <div class="footer">
-            <ul style="list-style: none;">
+            <!-- <ul>
               <li class="waste"><a href="#">Iron Man</a></li>
               <li class="waste"><a href="#">Iron Man</a></li>
               <li class="waste"><a href="#">Iron Man</a></li>
               <li class="waste"><a href="#">Iron Man</a></li>
-            </ul>
+            </ul> -->
+            <div class="footer_links"><a href="#">Iron Man</a></div>
+            <div class="footer_links"><a href="#">Iron Man</a></div>
+            <div class="footer_links"><a href="#">Iron Man</a></div>
+            <div class="footer_links"><a href="#">Iron Man</a></div>
           </div>
         </div>
         <div id="grid-item-8">
           <div class="footer">
-            <ul style="list-style: none; text-decoration: none;">
+            <div class="footer_links"><a href="/">Home</a></div>
+            <div class="footer_links"><a href="/#redirect">Games</a></div>
+            <div class="footer_links"><a href="/about">About</a></div>
+            <div class="footer_links"><a href="/contact">Contact</a></div>
+            <!-- <ul style="text-decoration: none;">
               <li class="waste"><a href="/">Home</a></li>
               <li class="waste"><a href="/#redirect">Games</a></li>
               <li class="waste"><a href="/about">About</a></li>
               <li class="waste"><a href="/contact">Contact</a></li>
-            </ul>
+            </ul> -->
           </div>
         </div>
         <div class="last">
@@ -371,6 +397,7 @@ ul.primary li:hover a {
       </div>
       <div class="copyright">Copyright GameHub 2022</div>
     </section>
+
 
     <!-- jquery plugins here-->
     <script src="/js/jquery-1.12.1.min.js"></script>
