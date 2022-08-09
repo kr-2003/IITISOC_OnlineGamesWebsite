@@ -8,7 +8,7 @@
 html, body {
     background-color: #333;
     /* width: 100%; */
-    max-width: 100%; 
+    max-width: 100%;
     overflow-x: hidden;
     padding: 0;
 }
@@ -56,7 +56,7 @@ i{
 #bg_body{
     height: 120vh;
     position: relative;
-    background-image: url("/images/bg-img7.jpg");
+    background-image: url("/images/SecyBg.jpg");
     background-repeat: no-repeat;
     background-size: 100% 100%;
     width: 100vw;
@@ -288,12 +288,6 @@ a {
     /* margin: 7.5% auto; */
   }
 
-.waste{
-  display: inline-block;
-}
-/* .footer{
-  height: 100%;
-} */
 /*  .headersss {
     padding-top: 25vh;
     position:relative;
@@ -480,7 +474,7 @@ a {
 #content{
     color: #a6aeb9;
     font-size: 3.5vh;
-   
+
 }
 #letsplay{
     color: white;
@@ -507,7 +501,7 @@ a {
 
 
 #section2{
-    height: 62vh;
+    height: 80vh;
   }
   #section2>#container-mid>div{
     color: #FAC213 !important;
@@ -529,38 +523,23 @@ a {
   display: grid;
   grid-template-columns: repeat(3, 33.33%);
   color: white;
-  /* height: 400px; */
   /* margin-bottom: 40px; */
 }
 #container-mid>div{
-    display: inline-block;
-    /* width: 10vw;
+    /* display: inline-block;
+    width: 10vw;
     text-align: center;
     margin: 0 7.5vw; */
-    /* display: flex; */
-    text-align: center;
+    display: flex;
     align-items: center;
     justify-content: center;
-  }
-  #container-mid>div>p{
+}
+#container-mid>div>p{
     /* font-size: 1.5vw; */
-    /* color: white; */
-    color: #FAC213;
-    /* float: left; */
-    text-align: center;
-  }
-  #container-mid>div>p:hover{
-    color: yellow !important;
+    color: white;
   }
 #container-mid>div>i{
   color: white;
-  align-items: center;
-}
-.footer_links{
-  color: inherit;
-}
-.footer_links:hover{
-  color: yellow;
 }
 #hr2{
     width: 50%;
@@ -578,11 +557,9 @@ a {
     margin-left: 470px;
 }
 .copyright{
-  bottom: 0;
   text-align: center;
-    /* background-color: #0E1A23; */
-    background-color: #2b2c2c;
-    /* padding-bottom: 1vh; */
+    background-color: #0E1A23;
+    padding-bottom: 1vh;
     color: #dadde1;
 }
 
@@ -687,52 +664,21 @@ input[type=radio] {
 .hi{
   color: #8A39E1;
 }
-.footer_links{
-  text-align: center;
-}
-.footer_links>a{
-  color: inherit;
-}
+
 
 /* Profile Css */
 /*.row{
   background-image: url("/images/gamesbg.png");
     color: black;
 }*/
-.card-body{
-  padding-top: 40px;
-}
-.heyy{
-  text-align: center;
-}
-.cardio{
-  padding-bottom: 100px;
-}
-.carded{
-  padding-bottom: 95px;
-}
-.card{
-  background-image: url("/images/gamesbg.png");
-  color: white;
-  width: 100%;
-}
-.carding{
-  margin-bottom: 50px;
-  padding-bottom: 160px;
-  padding-top: 20px;
-}
 
-a{
-  text-decoration: none !important;
-}
-/* .footer>ul>li{
-  display: inline-block;
-} */
+
+
 @media (max-width:1180px) {
   .nav>.nav-links{
       margin: 0;
     }
-  
+
     .card_content{
       font-size: 1.5vw;
     }
@@ -792,9 +738,6 @@ a{
 
   #container-mid>div{
     margin-bottom: 20px;
-  }
-  #container-mid>div>i{
-    margin-right: 25px;
   }
   #login-signup{
       margin-left: 15vw;
@@ -856,19 +799,19 @@ a{
       margin-left: -15px;
   }
 
-  /* .cot */
+  .cot
   #section2{
-      height: 105vh;
+      height: 120vh;
       color: #FAC213;
     }
   #main_container-1{
-    background-image: url("/images/bg-img4.jpeg");
+    background-image: url("/images/SecyBg.jpg");
   }
   .card_content{
     font-size: 2.5vw;
   }
   #bg_body{
-    background-image: url("/images/bg-img4.jpeg");
+    background-image: url("/images/SecyBg.jpg");
   }
 
   body {
