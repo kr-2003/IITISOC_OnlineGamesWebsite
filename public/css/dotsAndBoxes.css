@@ -11,27 +11,44 @@
 
 }
 
-body {
-    background-color: var(--bg-color);
-    color: black;
-    font-family: helvetica;
+body{
+	background-image: url("/images/new2.jpg");
+	background-size: 100vw 100vh;
+	background-repeat: no-repeat;
+	font-family: arial;
+	display: grid;
+	grid-template-columns: 20% 60% 20%;
+	text-align: center;
+	color: white;
 }
 
-main {
-    width: 800px;
-    margin-left: 70px;
-    display: flex;
-    justify-content: start;
-    flex-wrap: wrap;
-    background-color: var(--board);
-    border: solid #456123 0;
-    border-radius: 5px;
+.logo-img{
+	position: relative;
+	top: 240px;
+	left: 30px;
+	background-image: url("/images/new1.png");
+	background-repeat: no-repeat;
+	background-size: 86% 36%;
+}
+
+
+
+.game-board{
+	height: 620px;
+	width: 820px;
+	/* background-color: cadetblue; */
+	/* From https://css.glass */
+background: rgba(255, 255, 255, 0.23);
+border-radius: 16px;
+box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+backdrop-filter: blur(3.2px);
+-webkit-backdrop-filter: blur(3.2px);
+border: 1px solid rgba(255, 255, 255, 0.5);
 }
 
 .box {
-    width: 150px;
-    height: 150px;
-    background-color: var(--bg-color);
+    width: 180px;
+    height: 180px;
     text-align: center;
     font-size: 2em;
 }
@@ -45,30 +62,21 @@ main {
 }
 
 .hor-line {
-    width: 150px;
+    width: 180px;
     height: 20px;
     margin-left: 20px;
     background-color: var(--lines);
 }
 
-.line-p1:hover {
-    background-color: var(--player-1-hover);
-}
 
-.line-p2:hover {
-    background-color: var(--player-2-hover);
-}
 
 .vert-line {
     width: 20px;
-    height: 150px;
+    height: 180px;
     background-color: var(--lines);
 }
 
-body{
-	background: #f2f2f2;
-	font-family: arial;
-}
+
 
 .board{
 	width: 700px;
@@ -286,8 +294,9 @@ body{
 	border-radius: 0 0 10px 10px;
 } */
 .status{
-	position: absolute;
-	bottom: 0px;
+	/* position: absolute;
+	bottom: 0px; */
+	margin-top: 20px;
 	width: 100%;
 	text-align: center;
 	line-height: 40px;
@@ -301,5 +310,233 @@ body{
 	.game {
 		margin: 120px 0;
 		zoom: 138% !important;
+	}
+}
+
+@media (max-width: 1097px){
+	.logo-img{
+		display: none;
+	}
+	body{
+		display: flex;
+		justify-content: center;
+		text-align: center;
+		color: white;
+		
+	}
+	.game-board{
+		height: 620px;
+		width: 820px;
+		/* background-color: cadetblue; */
+		/* From https://css.glass */
+		background: rgba(255, 255, 255, 0.23);
+		border-radius: 16px;
+		box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+		backdrop-filter: blur(3.2px);
+		-webkit-backdrop-filter: blur(3.2px);
+		border: 1px solid rgba(255, 255, 255, 0.5);
+	}
+	
+	.box {
+		width: 180px;
+		height: 180px;
+		text-align: center;
+		font-size: 2em;
+	}
+	
+}
+
+@media (max-width: 841px){
+	body{
+		display: flex;
+		justify-content: center;
+		text-align: center;
+		color: white;
+		
+	}
+	.game-board{
+		height: 500px;
+		width: 660px;
+		/* background-color: cadetblue; */
+		/* From https://css.glass */
+		background: rgba(255, 255, 255, 0.23);
+		border-radius: 16px;
+		box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+		backdrop-filter: blur(3.2px);
+		-webkit-backdrop-filter: blur(3.2px);
+		border: 1px solid rgba(255, 255, 255, 0.5);
+	}
+	
+	.box {
+		width: 140px;
+		height: 140px;
+		text-align: center;
+		font-size: 2em;
+	}
+	.hor-line {
+		width: 140px;
+		height: 20px;
+		margin-left: 20px;
+	}
+	.vert-line {
+		width: 20px;
+		height: 140px;
+	}
+}
+
+
+@media (max-width: 670px){
+	body{
+		display: flex;
+		justify-content: center;
+		text-align: center;
+		color: white;
+		
+	}
+	.game-board{
+		height: 420px;
+		width: 555px;
+		/* background-color: cadetblue; */
+		/* From https://css.glass */
+		background: rgba(255, 255, 255, 0.23);
+		border-radius: 16px;
+		box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+		backdrop-filter: blur(3.2px);
+		-webkit-backdrop-filter: blur(3.2px);
+		border: 1px solid rgba(255, 255, 255, 0.5);
+	}
+	
+	.box {
+		width: 120px;
+		height: 120px;
+		text-align: center;
+		font-size: 2em;
+	}
+	.hor-line {
+		width: 120px;
+		height: 15px;
+		margin-left: 15px;
+	}
+	.vert-line {
+		width: 15px;
+		height: 120px;
+	}
+}
+
+
+@media (max-width: 570px){
+	body{
+		display: flex;
+		justify-content: center;
+		text-align: center;
+		color: white;
+		
+	}
+	.game-board{
+		height: 360px;
+		width: 475px;
+		/* background-color: cadetblue; */
+		/* From https://css.glass */
+		background: rgba(255, 255, 255, 0.23);
+		border-radius: 16px;
+		box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+		backdrop-filter: blur(3.2px);
+		-webkit-backdrop-filter: blur(3.2px);
+		border: 1px solid rgba(255, 255, 255, 0.5);
+	}
+	
+	.box {
+		width: 100px;
+		height: 100px;
+		text-align: center;
+		font-size: 2em;
+	}
+	.hor-line {
+		width: 100px;
+		height: 15px;
+		margin-left: 15px;
+	}
+	.vert-line {
+		width: 15px;
+		height: 100px;
+	}
+}
+
+
+@media (max-width: 488px){
+	body{
+		display: flex;
+		justify-content: center;
+		text-align: center;
+		color: white;
+		
+	}
+	.game-board{
+		height: 280px;
+		width: 370px;
+		/* background-color: cadetblue; */
+		/* From https://css.glass */
+		background: rgba(255, 255, 255, 0.23);
+		border-radius: 16px;
+		box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+		backdrop-filter: blur(3.2px);
+		-webkit-backdrop-filter: blur(3.2px);
+		border: 1px solid rgba(255, 255, 255, 0.5);
+	}
+	
+	.box {
+		width: 80px;
+		height: 80px;
+		text-align: center;
+		font-size: 2em;
+	}
+	.hor-line {
+		width: 80px;
+		height: 10px;
+		margin-left: 10px;
+	}
+	.vert-line {
+		width: 10px;
+		height: 80px;
+	}
+}
+
+@media (max-width: 450px){
+	body{
+		display: flex;
+		justify-content: center;
+		text-align: center;
+		color: white;
+		height: 50%;
+		background-size: normal 50vh;
+		
+	}
+	.game-board{
+		height: 220px;
+		width: 290px;
+		/* background-color: cadetblue; */
+		/* From https://css.glass */
+		background: rgba(255, 255, 255, 0.23);
+		border-radius: 16px;
+		box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+		backdrop-filter: blur(3.2px);
+		-webkit-backdrop-filter: blur(3.2px);
+		border: 1px solid rgba(255, 255, 255, 0.5);
+	}
+	
+	.box {
+		width: 60px;
+		height: 60px;
+		text-align: center;
+		font-size: 2em;
+	}
+	.hor-line {
+		width: 60px;
+		height: 10px;
+		margin-left: 10px;
+	}
+	.vert-line {
+		width: 10px;
+		height: 60px;
 	}
 }

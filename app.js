@@ -15,8 +15,8 @@ import ejsMate from "ejs-mate";
 import { User } from "./models/user.js";
 import ExpressError from "./utils/ExpressError.js";
 import catchAsync from "./utils/ExpressError.js";
-import { Server } from "socket.io";
 import nodemailer from "nodemailer";
+import { Server } from "socket.io";
 const PORT = process.env.PORT || 3000;
 const server = express()
   .use(app)
