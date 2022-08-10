@@ -17,132 +17,160 @@
 
     
     <style>
-/* A simple, css only, (some-what) responsive menu */
-
-a {
-  text-decoration: none;
-  color: #fff;
-  display: block;
-}
-
-ul {
-  list-style: none;
-  position: relative;
-  text-align: left;
-}
-
-li {
-  float: left;
-}
-
-/* clear'n floats */
-ul:after {
-  clear: both;
-}
-
-ul:before,
-ul:after {
-    content: " ";
-    display: table;
-}
-
-/* prime *
-
-/* subs */
-ul.sub {
-  position: absolute;
-  top: 58px;
-  z-index: 200;
-  box-shadow: 2px 2px 0 #BEBEBE;
-  width: 25%;
-  display:none;
-  background-color: #000;
-}
-
-ul.sub li {
-  float: none;
-  margin: 0;
-}
-
-ul.sub li a {
-  border-bottom: 1px dotted #ccc;
-  border-right: none;
-  padding: 15px 30px;
-}
-
-ul.sub li:last-child a {
-  border-bottom: none;
-}
-
-ul.sub li a:hover {
-  /* color: #000; */
-}
-
-/* sub display*/
-ul.primary li:hover ul {
-  display: block;
-  
-}
-
-ul li ul {
-  transition: display 2000ms ease-in;
-}
-
-/* keeps the tab background white */
-ul.primary li:hover a {
-  /* color: rgb(215, 80, 199); */
-  text-shadow: none;
-  transition: display 500ms ease-in;
-}
-
-
-@media only screen and (max-width: 600px) {
-  .decor {
-    padding: 3px;
-  }
-  
-  .wrap {
-    width: 100%;
-    margin-top: 0px;
-  }
-  
-   li {
-    float: none;
-  }
-  
-  ul.primary li:hover a {
-    background: none;
-    color: #8B8B8B;
-    text-shadow: 1px 1px #000;
-  }
-
-  ul.primary li:hover ul {
-    display: block;
-    background: #272727;
-    color: #fff;
-  }
-  
-  ul.sub {
-    display: block;  
-    position: static;
-    box-shadow: none;
-    width: 100%;
-  }
-  
-  ul.sub li a {
-    background: #272727;
-  	border: none;
-    color: #8B8B8B;
-  }
-  
-  ul.sub li a:hover {
-    color: #ccc;
-    background: none;
-  }
-}
-
-
-    </style>
+      /* A simple, css only, (some-what) responsive menu */
+      
+      a {
+        text-decoration: none;
+        color: #fff;
+        display: block;
+      }
+      
+      ul {
+        list-style: none;
+        position: relative;
+        text-align: left;
+      }
+      
+      li {
+        float: left;
+      }
+      
+      /* clear'n floats */
+      ul:after {
+        clear: both;
+      }
+      
+      ul:before,
+      ul:after {
+          content: " ";
+          display: table;
+      }
+      
+      /* prime *
+      
+      /* subs */
+      ul.sub {
+        position: absolute;
+        top: 58px;
+        z-index: 200;
+        box-shadow: 2px 2px 0 #BEBEBE;
+        width: 25%;
+        display:none;
+        background-color: #222831;
+        color: white;
+      }
+      
+      ul.sub li {
+        float: none;
+        margin: 0;
+      }
+      
+      ul.sub li a {
+        border-bottom: 1px dotted #ccc;
+        border-right: none;
+        padding: 15px 30px;
+        color: white;
+      }
+      ul.sub li a:hover{
+        color: #6E3CBC;
+      }
+      
+      ul.sub li:last-child a {
+        border-bottom: none;
+      }
+      
+      
+      /* sub display*/
+      ul.primary li:hover ul {
+        display: block;
+      
+      }
+      
+      ul li ul {
+        transition: display 2000ms ease-in;
+      }
+      
+      /* keeps the tab background white */
+      ul.primary li:hover a {
+        /* color: rgb(215, 80, 199); */
+        text-shadow: none;
+        transition: display 500ms ease-in;
+      }
+      
+      
+      @media only screen and (max-width: 600px) {
+        .decor {
+          padding: 3px;
+        }
+      
+        .wrap {
+          width: 100%;
+          margin-top: 0px;
+        }
+      
+         li {
+          float: none;
+        }
+      
+        ul.primary li:hover a {
+          background: none;
+          color: #8B8B8B;
+          text-shadow: 1px 1px #000;
+        }
+      
+        ul.primary li:hover ul {
+          display: block;
+          background: #272727;
+          color: #fff;
+        }
+      
+        ul.sub {
+          display: block;
+          position: static;
+          box-shadow: none;
+          width: 100%;
+        }
+      
+        ul.sub li a {
+          background: #272727;
+          border: none;
+          color: #8B8B8B;
+        }
+      
+        ul.sub li a:hover {
+          color: #ccc;
+          background: none;
+        }
+      }
+      
+      @media (max-width: 992px){
+        ul.sub {
+        position: absolute;
+        top: 78px;
+        left: 55%;
+        z-index: 200;
+        box-shadow: 2px 2px 0 #BEBEBE;
+        width: 45%;
+        display:none;
+        background-color: #222831;
+      }
+      }
+      
+      @media (max-width: 424px){
+        ul.sub {
+        position: absolute;
+        top: 78px;
+        left: 45%;
+        z-index: 200;
+        box-shadow: 2px 2px 0 #BEBEBE;
+        width: 65%;
+        display:none;
+        background-color: #222831;
+      }
+      }
+      
+      
+          </style>
 
 
     <link
@@ -293,7 +321,7 @@ ul.primary li:hover a {
               <% } %>
             </div>
           </div>
-          
+
         </div>
       </div>
 
