@@ -3,78 +3,87 @@
   <div style="height: 100vh; color: white">
     <div class="row" style="margin-bottom: 40px">
       <div class="container baap contact-bg">
-        <div class="insideContainer">
+        <div class="insideContainer contactInsideCont">
           <form
             class="needs-validation"
             action="/send_mail"
             method="post"
             novalidate
           >
-            <div class="container whitebox b-l-contact">
+            <div class="container whitebox b-l-contact contact_box">
               <div class="border-login ">
               </div>
 
-              <div class="bada contact--div">
-                <h1 class="text-center head">Get In Touch</h1>
-                <div class="mb-3 inputs" style="text-align: left">
-                  <label class="form-label auth" for="name">NAME</label
-                  ><br />
-                  <input
-                    type="text"
-                    name="Name"
-                    id="Name"
-                    placeholder="Name"
-                    style="color: rgb(255, 255, 255)"
-                    required
-                  /><br />
-                  <div class="valid-feedback">Looks good!</div>
+              <div class="bada contact--div" id="contactContain">
+                <h1 class="text-center head centerTop">Get In Touch</h1>
+                <div class="leftCol">
+                  <div class="mb-3 inputs" style="text-align: left">
+                    <label class="form-label auth" for="name">NAME</label
+                    ><br />
+                    <input
+                      type="text"
+                      name="Name"
+                      id="Name"
+                      placeholder="Name"
+                      style="color: rgb(255, 255, 255)"
+                      required
+                    /><br />
+                    <div class="valid-feedback">Looks good!</div>
+                  </div>
+  
+                  <div class="mb-3 inputs" style="text-align: left">
+                    <label class="form-label auth" for="email">EMAIL ID</label
+                    ><br />
+                    <input
+                      type="text"
+                      name="email_for_mail"
+                      id="email_for_mail"
+                      placeholder="Email ID"
+                      style="color: rgb(255, 255, 255)"
+                      required
+                    /><br />
+                    <div class="valid-feedback">Looks good!</div>
+                  </div>
+  
+                  <div class="mb-3 inputs" style="text-align: left">
+                    <label class="form-label auth" for="text">SUBJECT</label
+                    ><br />
+                    <input
+                      type="text"
+                      name="subject_for_mail"
+                      id="subject_for_mail"
+                      placeholder="Subject"
+                      style="color: rgb(255, 255, 255)"
+                      required
+                    /><br />
+                    <div class="valid-feedback">Looks good!</div>
+                  </div>
                 </div>
+                <div class="rightCol">
 
-                <div class="mb-3 inputs" style="text-align: left">
-                  <label class="form-label auth" for="email">EMAIL ID</label
-                  ><br />
-                  <input
-                    type="text"
-                    name="email_for_mail"
-                    id="email_for_mail"
-                    placeholder="Email ID"
-                    style="color: rgb(255, 255, 255)"
-                    required
-                  /><br />
-                  <div class="valid-feedback">Looks good!</div>
+                  <div class="mb-3 inputs" style="text-align: left">
+                    <label
+                      for="text"
+                      class="form-label auth"
+                      style="text-align: left"
+                      >ENTER TEXT</label
+                    ><br />
+                    <!-- <input
+                      type=" text"
+                      name="text_mail"
+                      id="text_mail"
+                      placeholder="Text"
+                      style="color: rgb(255, 255, 255)"
+                      required
+                    /><br /> -->
+                    <textarea id="text_mail" name="text_mail" rows="10" cols="65%" placeholder="Text" style="color: rgb(255, 255, 255)" required></textarea><br />
+                  </div>    
                 </div>
-
-                <div class="mb-3 inputs" style="text-align: left">
-                  <label class="form-label auth" for="text">SUBJECT</label
-                  ><br />
-                  <input
-                    type="text"
-                    name="subject_for_mail"
-                    id="subject_for_mail"
-                    placeholder="Subject"
-                    style="color: rgb(255, 255, 255)"
-                    required
-                  /><br />
-                  <div class="valid-feedback">Looks good!</div>
-                </div>
-
-                <div class="mb-3 inputs" style="text-align: left">
-                  <label
-                    for="text"
-                    class="form-label auth"
-                    style="text-align: left"
-                    >ENTER TEXT HERE</label
-                  ><br />
-                  <input
-                    type=" text"
-                    name="text_mail"
-                    id="text_mail"
-                    placeholder="Text"
-                    style="color: rgb(255, 255, 255)"
-                    required
-                  /><br />
-                  <div class="valid-feedback">Looks good!</div>
-                  <button class="button" type="submit">SUBMIT</button>
+                <div class="centerRow">
+                  <div class="mb-3 inputs" style="text-align: left"></div>
+                    <div class="valid-feedback">Looks good!</div>
+                    <button class="button" type="submit">SUBMIT</button>
+                  </div>
                 </div>
               </div>
             </div>

@@ -39,7 +39,15 @@ input{
   outline: none;
   background-color: #abbedd39;
 }
-
+#text_mail{
+  /* color: aliceblue; */
+  width: 100%;
+  border: 0;
+  padding: 10px 10px;
+  border-bottom: 3px solid #c986ef;
+  outline: none;
+  background-color: #abbedd39;
+}
 input ~ .border {
   /* position: relative; */
   top: 160px;
@@ -131,4 +139,22 @@ input:focus ~ .border {
 ::placeholder{
   color:rgb(255, 255, 255);
   opacity:.9;
+}
+
+.contact_box{
+  height: 600px;
+}
+.contactInsideCont{
+  width: 95vw;
+}
+@media (max-width:400px){
+  .auth{
+    font-size: 15px;
+  }
+  textarea{
+    height: 240px;
+  }
+  /* .inputs{
+    margin-bottom: 5px !important;
+  } */
 }

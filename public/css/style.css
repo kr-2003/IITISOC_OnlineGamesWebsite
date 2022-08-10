@@ -725,6 +725,27 @@ input[type=radio] {
 a{
   text-decoration: none !important;
 }
+
+#contactContain{
+  display: grid;
+  grid-template-columns: repeat(2, 50%);
+  grid-template-areas:
+    "centerTop centerTop"
+    "leftCol rightCol"
+    "centerRow centerRow";
+}
+.centerTop{
+  grid-area: centerTop;
+}
+.rightCol{
+  grid-area: rightCol;
+}
+.leftCol{
+  grid-area: leftCol;
+}
+.centerRow{
+  grid-area: centerRow;
+}
 /* .footer>ul>li{
   display: inline-block;
 } */
