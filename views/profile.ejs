@@ -1,142 +1,150 @@
-<% layout('layout/boilerplate.ejs') %>
+<% layout("layout/boilerplate.ejs") %>
 
-<section style="background-color: #0C1B26">
+<div class="big--Container">
+  <div class="inside--Container-1">
+    <div class="about-card">
+      <img
+        src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-chat/ava3.webp"
+        alt="avatar"
+        class="rounded-circle img-fluid"
+        style="width: 150px"
+      />
+      <h5 class="my-3"><%= user.username %></h5>
+      <div class="d-flex justify-content-center mb-2">
+        <% let cnt = 0%> <%let ans = false; %>
+        <%if(user.username!==currentUser.username) {%> <% for(let follower of
+        user.followers){ %> <% if(follower.username===currentUser.username)
+        {ans=true}; cnt++; %> <% } %> <% if(ans) {%>
+        <button type="button" class="btn btn-primary">
+          <a
+            style="color: white"
+            href="/users/<%=currentUser.id%>/<%=user._id%>/unfollow"
+            >Unfollow</a
+          >
+        </button>
 
-    <div class="row">
-      <div class="col-lg-4">
-        <div class="card carded mb-4">
-          <div class="card-body text-center">
-            <img
-              src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-chat/ava3.webp"
-              alt="avatar"
-              class="rounded-circle img-fluid"
-              style="width: 150px"
-            />
-            <h5 class="my-3"><%= user.username %> </h5>
-            <div class="d-flex justify-content-center mb-2">
-              <% let cnt = 0%> <%let ans = false; %>
-                <%if(user.username!==currentUser.username) {%> <% for(let follower of
-                user.followers){ %> <% if(follower.username===currentUser.username)
-                {ans=true}; cnt++; %> <% } %> <% if(ans) {%>
-                  <button type="button" class="btn btn-primary" ><a style = "color: white;" href="/users/<%=currentUser.id%>/<%=user._id%>/unfollow">Unfollow</a></button>
+        <% } else{ %>
+        <button type="button" class="btn btn-primary">
+          <a style="color: white" href="/users/<%=user._id%>/follow">Follow</a>
+        </button>
 
-                <% } else{ %>
-                  <button type="button" class="btn btn-primary"><a style = "color: white;" href="/users/<%=user._id%>/follow">Follow</a></button>
+        <% } %> <% } %>
 
-                <% } %> <% } %>
-
-
-              <button type="button" style="background-color: linear-gradient(to right, #B983FF 0%, #8A39E1 51%, #7A0BC0 100%);" class="btn btn-outline-primary ms-1">
-                Message
-              </button>
-            </div>
-          </div>
-        </div>
-
-        <div class="card cardio mb-4 mb-lg-0">
-          <div class="card-body p-0">
-            <h3 class="heyy" style="text-align: center;" style="display: inline-block;">
-                <span style="color: #8A39E1;">FOLLOW</span>ERS
-              </h3>
-            <ul class="list-group list-group-flush rounded-3">
-
-                <% for(let follower of user.followers){ %>
-              <li
-                class="list-group-item d-flex justify-content-between align-items-center p-3"
-              >
-              <a class="mb-0" href="/users/<%= follower._id %> "><%= follower.username %> </a>
-
-              </li>
-              <% } %>
-
-            </ul>
-          </div>
-        </div>
-      </div>
-      <div class="col-lg-8">
-        <div class="card mb-4">
-          <div class="card-body">
-            <div class="row">
-              <h2  class="heyy">DE<span style="color: #8A39E1;">TAILS</span></h2>
-              <div class="col-sm-3">
-                <p class="mb-0">Full Name</p>
-              </div>
-              <div class="col-sm-9">
-                <p class="text-muted mb-0">user.fullname</p>
-              </div>
-            </div>
-            <hr />
-            <div class="row">
-              <div class="col-sm-3">
-                <p class="mb-0">Username</p>
-              </div>
-              <div class="col-sm-9">
-                <p class="text-muted mb-0"><%=user.username%></p>
-              </div>
-            </div>
-            <hr />
-            <div class="row">
-              <div class="col-sm-3">
-                <p class="mb-0">Email</p>
-              </div>
-              <div class="col-sm-9">
-                <p class="text-muted mb-0"><%=user.email%></p>
-              </div>
-            </div>
-            <hr />
-            <div class="row">
-              <div class="col-sm-3">
-                <p class="mb-0">Phone</p>
-              </div>
-              <div class="col-sm-9">
-                <p class="text-muted mb-0">(097) 234-5678</p>
-              </div>
-            </div>
-            <hr />
-            <div class="row">
-              <div class="col-sm-3">
-                <p class="mb-0">Mobile</p>
-              </div>
-              <div class="col-sm-9">
-                <p class="text-muted mb-0">(098) 765-4321</p>
-              </div>
-            </div>
-            <hr />
-            <div class="row">
-              <div class="col-sm-3">
-                <p class="mb-0">Address</p>
-              </div>
-              <div class="col-sm-9">
-                <p class="text-muted mb-0">Bay Area, San Francisco, CA</p>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div style= "min-height: 150px; overflow: hidden;" class="row">
-          <div style= "min-height: 150px; overflow: hidden;" class="col-md-12">
-            <div style= "min-height: 150px; overflow: hidden;" class="card carding mb-4 mb-md-0">
-
-                <h3  class="heyy" class="mb-4" >
-                  HIS<span style="color: #8A39E1;">TORY</span>
-                </h3>
-                <% for(let game of user.history){ %>
-                  <div style="min-height: 100px; margin-bottom: 20px; overflow: hidden;">
-                      <h4><%= game.game %></h4>
-
-                    <% if(game.status==="won") { %>
-                      <div><span style="color: #00FFAB;">Winner: </span><%=game.winner%></div>
-                      <div><span style="color: #FF0063;">Looser: </span><%=game.loser%> </div>
-                    <% } else { %>
-                      <div style="color: grey;"><%=game.winner%></div>
-                      <div style="color: grey"><%=game.loser%> </div>
-                      <% } %>
-                  </div>
-                <% }%>
-
-            </div>
-          </div>
-
-        </div>
+        <button
+          type="button"
+          style="
+            background-color: linear-gradient(
+              to right,
+              #b983ff 0%,
+              #8a39e1 51%,
+              #7a0bc0 100%
+            );
+          "
+          class="btn btn-outline-primary ms-1"
+        >
+          Message
+        </button>
       </div>
     </div>
-</section>
+  </div>
+
+  <div class="inside--Container-1">
+    <div class="about-card">
+      <div class="card-body">
+        <div class="row">
+          <h2 class="heyy">DETAILS</span></h2>
+          <div class="col-sm-3">
+            <p class="mb-0">Full Name</p>
+          </div>
+          <div class="col-sm-9">
+            <p class="mb-0"><%=user.username%></p>
+          </div>
+        </div>
+        <hr />
+        <div class="row">
+          <div class="col-sm-3">
+            <p class="mb-0">Username</p>
+          </div>
+          <div class="col-sm-9">
+            <p class="mb-0"><%=user.username%></p>
+          </div>
+        </div>
+        <hr />
+        <div class="row">
+          <div class="col-sm-3">
+            <p class="mb-0">Email</p>
+          </div>
+          <div class="col-sm-9">
+            <p class="mb-0"><%=user.email%></p>
+          </div>
+        </div>
+        <hr />
+      </div>
+    </div>
+  </div>
+  <div class="inside--Container">
+    <div class="about-card">
+      <h3 class="heyy" style="text-align: center" style="display: inline-block">
+        <span>FOLLOWERS</span>
+      </h3>
+      <ul class="list-group list-group-flush rounded-3">
+        <% for(let follower of user.followers){ %>
+        <li
+          class="list-group-item d-flex justify-content-between align-items-center p-3"
+        >
+          <a class="mb-0" href="/users/<%= follower._id %> "
+            ><%= follower.username %>
+          </a>
+        </li>
+        <% } %>
+      </ul>
+    </div>
+  </div>
+  <div class="inside--Container">
+    <div class="about-card" style="overflow: scroll;">
+      <h3 class="heyy" class="mb-4">
+      <span>HISTORY</span>
+      </h3>
+      <% for(let game of user.history){ %>
+      <div
+        class="history-card"
+        style="min-height: 100px; margin-bottom: 20px; overflow: hidden"
+      >
+        <h3><%= game.game %></h3>
+
+        <% if(game.status==="won") { %>
+        <div class="history-card-inner">
+          <div class="history-card-text" style="color: rgb(18, 64, 18)">
+            <%=game.winner%>
+          </div>
+          <div class="vs-div">
+            <div class="vsImage">
+              <img src="/images/vs2.png" alt="" />
+            </div>
+          </div>
+          <div class="history-card-text" style="color: rgb(147, 14, 14)">
+            <%=game.loser%>
+          </div>
+        </div>
+
+        <% } else { %>
+        <div class="history-card-inner">
+          <div class="history-card-text" style="color: rgb(86, 86, 86)">
+            <%=game.winner%>
+          </div>
+          <div class="vs-div">
+            <div class="vsImage">
+              <img src="/images/vs2.png" alt="" />
+            </div>
+          </div>
+          <div class="history-card-text" style="color: rgb(86, 86, 86)">
+            <%=game.loser%>
+          </div>
+        </div>
+
+        <% } %>
+      </div>
+      <% }%>
+    </div>
+  </div>
+</div>

@@ -17,132 +17,160 @@
 
     
     <style>
-/* A simple, css only, (some-what) responsive menu */
-
-a {
-  text-decoration: none;
-  color: #fff;
-  display: block;
-}
-
-ul {
-  list-style: none;
-  position: relative;
-  text-align: left;
-}
-
-li {
-  float: left;
-}
-
-/* clear'n floats */
-ul:after {
-  clear: both;
-}
-
-ul:before,
-ul:after {
-    content: " ";
-    display: table;
-}
-
-/* prime *
-
-/* subs */
-ul.sub {
-  position: absolute;
-  top: 58px;
-  z-index: 200;
-  box-shadow: 2px 2px 0 #BEBEBE;
-  width: 25%;
-  display:none;
-  background-color: #000;
-}
-
-ul.sub li {
-  float: none;
-  margin: 0;
-}
-
-ul.sub li a {
-  border-bottom: 1px dotted #ccc;
-  border-right: none;
-  padding: 15px 30px;
-}
-
-ul.sub li:last-child a {
-  border-bottom: none;
-}
-
-ul.sub li a:hover {
-  /* color: #000; */
-}
-
-/* sub display*/
-ul.primary li:hover ul {
-  display: block;
-  
-}
-
-ul li ul {
-  transition: display 2000ms ease-in;
-}
-
-/* keeps the tab background white */
-ul.primary li:hover a {
-  /* color: rgb(215, 80, 199); */
-  text-shadow: none;
-  transition: display 500ms ease-in;
-}
-
-
-@media only screen and (max-width: 600px) {
-  .decor {
-    padding: 3px;
-  }
-  
-  .wrap {
-    width: 100%;
-    margin-top: 0px;
-  }
-  
-   li {
-    float: none;
-  }
-  
-  ul.primary li:hover a {
-    background: none;
-    color: #8B8B8B;
-    text-shadow: 1px 1px #000;
-  }
-
-  ul.primary li:hover ul {
-    display: block;
-    background: #272727;
-    color: #fff;
-  }
-  
-  ul.sub {
-    display: block;  
-    position: static;
-    box-shadow: none;
-    width: 100%;
-  }
-  
-  ul.sub li a {
-    background: #272727;
-  	border: none;
-    color: #8B8B8B;
-  }
-  
-  ul.sub li a:hover {
-    color: #ccc;
-    background: none;
-  }
-}
-
-
-    </style>
+      /* A simple, css only, (some-what) responsive menu */
+      
+      a {
+        text-decoration: none;
+        color: #fff;
+        display: block;
+      }
+      
+      ul {
+        list-style: none;
+        position: relative;
+        text-align: left;
+      }
+      
+      li {
+        float: left;
+      }
+      
+      /* clear'n floats */
+      ul:after {
+        clear: both;
+      }
+      
+      ul:before,
+      ul:after {
+          content: " ";
+          display: table;
+      }
+      
+      /* prime *
+      
+      /* subs */
+      ul.sub {
+        position: absolute;
+        top: 58px;
+        z-index: 200;
+        box-shadow: 2px 2px 0 #BEBEBE;
+        width: 25%;
+        display:none;
+        background-color: #222831;
+        color: white;
+      }
+      
+      ul.sub li {
+        float: none;
+        margin: 0;
+      }
+      
+      ul.sub li a {
+        border-bottom: 1px dotted #ccc;
+        border-right: none;
+        padding: 15px 30px;
+        color: white;
+      }
+      ul.sub li a:hover{
+        color: #6E3CBC;
+      }
+      
+      ul.sub li:last-child a {
+        border-bottom: none;
+      }
+      
+      
+      /* sub display*/
+      ul.primary li:hover ul {
+        display: block;
+      
+      }
+      
+      ul li ul {
+        transition: display 2000ms ease-in;
+      }
+      
+      /* keeps the tab background white */
+      ul.primary li:hover a {
+        /* color: rgb(215, 80, 199); */
+        text-shadow: none;
+        transition: display 500ms ease-in;
+      }
+      
+      
+      @media only screen and (max-width: 600px) {
+        .decor {
+          padding: 3px;
+        }
+      
+        .wrap {
+          width: 100%;
+          margin-top: 0px;
+        }
+      
+         li {
+          float: none;
+        }
+      
+        ul.primary li:hover a {
+          background: none;
+          color: #8B8B8B;
+          text-shadow: 1px 1px #000;
+        }
+      
+        ul.primary li:hover ul {
+          display: block;
+          background: #272727;
+          color: #fff;
+        }
+      
+        ul.sub {
+          display: block;
+          position: static;
+          box-shadow: none;
+          width: 100%;
+        }
+      
+        ul.sub li a {
+          background: #272727;
+          border: none;
+          color: #8B8B8B;
+        }
+      
+        ul.sub li a:hover {
+          color: #ccc;
+          background: none;
+        }
+      }
+      
+      @media (max-width: 992px){
+        ul.sub {
+        position: absolute;
+        top: 78px;
+        left: 55%;
+        z-index: 200;
+        box-shadow: 2px 2px 0 #BEBEBE;
+        width: 45%;
+        display:none;
+        background-color: #222831;
+      }
+      }
+      
+      @media (max-width: 424px){
+        ul.sub {
+        position: absolute;
+        top: 78px;
+        left: 45%;
+        z-index: 200;
+        box-shadow: 2px 2px 0 #BEBEBE;
+        width: 65%;
+        display:none;
+        background-color: #222831;
+      }
+      }
+      
+      
+          </style>
 
 
     <link
@@ -293,66 +321,77 @@ ul.primary li:hover a {
               <% } %>
             </div>
           </div>
+
         </div>
       </div>
 
 
 
+      <section id="section2" style="background-color: #0e1a23">
 
-    <section id="section2" style="background-color: #0e1a23">
-
-
-      <div id="background"></div>
-      <hr size="5" class="hr" />
-      <div id="container-mid">
-        <div id="contact">
-          <i class="fa-solid fa-address-card fa-3x center icons"></i><br />
-          <p>Contact</p>
-        </div>
-        <div id="games">
-          <i class="fa-solid fa-vr-cardboard fa-3x center icons"></i><br />
-          <p>Games</p>
-        </div>
-        <div id="reviews">
-          <i class="fa-solid fa-headset fa-3x center icons"></i><br />
-          <p>Reviews</p>
-        </div>
-      </div>
-      <hr size="5" class="hr" id="hr2" />
-
-      <!-- FOOTER -->
-      <div class="grid-container-2">
-        <div id="grid-item-9">
-          <a href="#">
-            <img src="images/logo.png" alt="" />
-          </a>
-        </div>
-        <div id="grid-item-7">
-          <div class="footer">
-            <ul style="list-style: none;">
-              <li class="waste"><a href="#">Iron Man</a></li>
-              <li class="waste"><a href="#">Iron Man</a></li>
-              <li class="waste"><a href="#">Iron Man</a></li>
-              <li class="waste"><a href="#">Iron Man</a></li>
-            </ul>
+        <div id="background"></div>
+        <hr size="5" class="hr" />
+        <div id="container-mid">
+          <div id="contact">
+            <i style="display: block" class="fa-solid fa-address-card fa-3x center icons"></i><br />
+            <p style="display: block">Contact</p>
+          </div>
+          <div id="games">
+            <i class="fa-solid fa-vr-cardboard fa-3x center icons"></i><br />
+            <p>Games</p>
+          </div>
+          <div id="reviews">
+            <i class="fa-solid fa-headset fa-3x center icons"></i><br />
+            <p>Reviews</p>
           </div>
         </div>
-        <div id="grid-item-8">
-          <div class="footer">
-            <ul style="list-style: none; text-decoration: none;">
-              <li class="waste"><a href="/">Home</a></li>
-              <li class="waste"><a href="/#redirect">Games</a></li>
-              <li class="waste"><a href="/about">About</a></li>
-              <li class="waste"><a href="/contact">Contact</a></li>
-            </ul>
+        <hr size="5" class="hr" id="hr2" />
+  
+        <!-- FOOTER -->
+        <div class="grid-container-2">
+          <div id="grid-item-9">
+            <a href="#">
+              <img src="images/logo.png" alt="" />
+            </a>
+          </div>
+          <div id="grid-item-7">
+            <div class="footer">
+              <!-- <ul>
+                <li class="waste"><a href="#">Iron Man</a></li>
+                <li class="waste"><a href="#">Iron Man</a></li>
+                <li class="waste"><a href="#">Iron Man</a></li>
+                <li class="waste"><a href="#">Iron Man</a></li>
+              </ul> -->
+              <div class="footer_links"><a href="#">ADDRESS</a></div>
+              <div class="footer_links">
+                Indian Institute of Technology Indore,
+                <br> 
+                Khandwa Road, Simrol, Indore 453552, 
+                <br>
+                INDIA
+              </div>
+            </div>
+          </div>
+          <div id="grid-item-8">
+            <div class="footer">
+              <div class="footer_links"><a href="/">Home</a></div>
+              <div class="footer_links"><a href="/#redirect">Games</a></div>
+              <div class="footer_links"><a href="/about">About</a></div>
+              <div class="footer_links"><a href="/contact">Contact</a></div>
+              <!-- <ul style="text-decoration: none;">
+                <li class="waste"><a href="/">Home</a></li>
+                <li class="waste"><a href="/#redirect">Games</a></li>
+                <li class="waste"><a href="/about">About</a></li>
+                <li class="waste"><a href="/contact">Contact</a></li>
+              </ul> -->
+            </div>
+          </div>
+          <div class="last">
+            <hr size="6" class="end" />
           </div>
         </div>
-        <div class="last">
-          <hr size="6" class="end" />
-        </div>
-      </div>
-      <div class="copyright">Copyright GameHub 2022</div>
-    </section>
+        <div class="copyright">Copyright GameHub 2022</div>
+      </section>
 
     <!-- jquery plugins here-->
     <script src="/js/jquery-1.12.1.min.js"></script>

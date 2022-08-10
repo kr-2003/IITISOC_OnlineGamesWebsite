@@ -111,6 +111,10 @@ $(function () {
     }
   });
 
+  document.querySelector(".playAgain").addEventListener("click", ()=>{
+    location.reload();
+  })
+
   $(".btn").click(function () {
     console.log(your_turn);
     if (your_turn) {
@@ -172,4 +176,5 @@ $(function () {
   $(".popover input").click(function () {
     $(this).select();
   });
+
 });

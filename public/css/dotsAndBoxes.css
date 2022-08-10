@@ -11,6 +11,10 @@
 
 }
 
+body {
+	overflow: hidden; /* Hide scrollbars */
+}
+
 body{
 	background-image: url("/images/new2.jpg");
 	background-size: 100vw 100vh;
@@ -432,6 +436,7 @@ border: 1px solid rgba(255, 255, 255, 0.5);
 		color: white;
 		
 	}
+
 	.game-board{
 		height: 360px;
 		width: 475px;

@@ -8,14 +8,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <!-- animate CSS -->
-      <link rel="stylesheet" href="/css/style.css" />
+
     <link rel="stylesheet" href="/css/animate.css" />
     <link rel="stylesheet" href="/css/login.css" />
     <link rel="stylesheet" href="/css/about.css">
 
 
+
     <link rel="stylesheet" href="/css/leaderboard.css">
-    
+    <link rel="stylesheet" href="/css/style.css" />
+    <link rel="stylesheet" href="/css/profile.css">
+
     <style>
 /* A simple, css only, (some-what) responsive menu */
 
@@ -56,7 +59,8 @@ ul.sub {
   box-shadow: 2px 2px 0 #BEBEBE;
   width: 25%;
   display:none;
-  background-color: #000;
+  background-color: #222831;
+  color: white;
 }
 
 ul.sub li {
@@ -68,6 +72,10 @@ ul.sub li a {
   border-bottom: 1px dotted #ccc;
   border-right: none;
   padding: 15px 30px;
+  color: white;
+}
+ul.sub li a:hover{
+  color: #6E3CBC;
 }
 
 ul.sub li:last-child a {
@@ -78,7 +86,7 @@ ul.sub li:last-child a {
 /* sub display*/
 ul.primary li:hover ul {
   display: block;
-  
+
 }
 
 ul li ul {
@@ -97,16 +105,16 @@ ul.primary li:hover a {
   .decor {
     padding: 3px;
   }
-  
+
   .wrap {
     width: 100%;
     margin-top: 0px;
   }
-  
+
    li {
     float: none;
   }
-  
+
   ul.primary li:hover a {
     background: none;
     color: #8B8B8B;
@@ -118,24 +126,50 @@ ul.primary li:hover a {
     background: #272727;
     color: #fff;
   }
-  
+
   ul.sub {
-    display: block;  
+    display: block;
     position: static;
     box-shadow: none;
     width: 100%;
   }
-  
+
   ul.sub li a {
     background: #272727;
   	border: none;
     color: #8B8B8B;
   }
-  
+
   ul.sub li a:hover {
     color: #ccc;
     background: none;
   }
+}
+
+@media (max-width: 992px){
+  ul.sub {
+  position: absolute;
+  top: 78px;
+  left: 55%;
+  z-index: 200;
+  box-shadow: 2px 2px 0 #BEBEBE;
+  width: 45%;
+  display:none;
+  background-color: #222831;
+}
+}
+
+@media (max-width: 424px){
+  ul.sub {
+  position: absolute;
+  top: 78px;
+  left: 45%;
+  z-index: 200;
+  box-shadow: 2px 2px 0 #BEBEBE;
+  width: 65%;
+  display:none;
+  background-color: #222831;
+}
 }
 
 
@@ -243,7 +277,7 @@ ul.primary li:hover a {
                     </div>
                      -->
 
-    
+
                     <!-- <li class="nav-item nav-links diff">
                       <a class="nav-link" href="leaderBoard/tictactoe.ejs">LeaderBoard</a>
                     </li> -->
@@ -308,12 +342,12 @@ ul.primary li:hover a {
       <hr size="5" class="hr" />
       <div id="container-mid">
         <div id="contact">
-          <i style="display: block" class="fa-solid fa-address-card fa-3x center icons"></i>
-          <p style="display: block"><a class="footer_links" href="/contact">Contact</a></p>
+          <i style="display: block" class="fa-solid fa-address-card fa-3x center icons"></i><br />
+          <p style="display: block">Contact</p>
         </div>
         <div id="games">
           <i class="fa-solid fa-vr-cardboard fa-3x center icons"></i><br />
-          <p><a class="footer_links" href="#redirect">Games</a></p>
+          <p>Games</p>
         </div>
         <div id="reviews">
           <i class="fa-solid fa-headset fa-3x center icons"></i><br />
@@ -337,10 +371,14 @@ ul.primary li:hover a {
               <li class="waste"><a href="#">Iron Man</a></li>
               <li class="waste"><a href="#">Iron Man</a></li>
             </ul> -->
-            <div class="footer_links"><a href="#">Iron Man</a></div>
-            <div class="footer_links"><a href="#">Iron Man</a></div>
-            <div class="footer_links"><a href="#">Iron Man</a></div>
-            <div class="footer_links"><a href="#">Iron Man</a></div>
+            <div class="footer_links"><a href="#">ADDRESS</a></div>
+            <div class="footer_links">
+              Indian Institute of Technology Indore,
+              <br> 
+              Khandwa Road, Simrol, Indore 453552, 
+              <br>
+              INDIA
+            </div>
           </div>
         </div>
         <div id="grid-item-8">
@@ -363,6 +401,7 @@ ul.primary li:hover a {
       </div>
       <div class="copyright">Copyright GameHub 2022</div>
     </section>
+
 
     <!-- jquery plugins here-->
     <script src="/js/jquery-1.12.1.min.js"></script>

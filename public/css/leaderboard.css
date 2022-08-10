@@ -39,39 +39,46 @@
     align-items: center;
     justify-content: center;
     margin-top: -50px;
+    /* From https://css.glass */
+
 }
 
 .inner-lead-card{
 
-    width: 50vw;
-    height: 60vh;
+    width:50vw;
+    height: 70vh;
     background-image: linear-gradient(to right, #CAB8FF 0%, #B983FF 100%);
     display: grid;
     grid-template-columns: 15% 65% 20%;
+    /* background: rgba(255, 255, 255, 0.16); */
 }
 
 .attributes{
     height: 7vh;
     background-image: linear-gradient(to right, #B983FF 0%, #8A39E1 70%, #7A0BC0 100%);
-    border: 1px solid black;
+    border: 0.1px solid black;
     display: flex;
     align-items: center;
     justify-content: center;
     font-family: 'Montserrat', sans-serif;
     font-weight: bold;
     font-size: 1.2em;
+    margin: 4px;
+    border-radius: 10px;
 
 }
 
 .row-val{
     height: 5vh;
-    border: 1px solid black;
+    border: 0.1px solid black;
     display: flex;
     align-items: center;
     justify-content: center;
     font-family: 'Montserrat', sans-serif;
     text-transform: capitalize;
      transition: transform .2s;
+     margin: 4px;
+     border-radius: 10px;
 }
 .row-val:hover{
     background-image: linear-gradient(to right, #F1F2F2 0%, #BEBFC2 51%, #A7A9AC 100% );
@@ -88,7 +95,7 @@
     font-size: 0.8em;
   }
   .inner-lead-card{
-    width: 60vw;
+    width: 90vw;
   }
 }
 
@@ -97,16 +104,16 @@
     font-size: 0.7em;
   }
   .inner-lead-card{
-    width: 60vw;
+    width: 95vw;
   }
 }
 
 @media (max-width:560px){
    .attributes{
-     font-size: 0.7em;
+     font-size: 0.5em;
    }
    .inner-lead-card{
-     width: 60vw;
+     width: 95vw;
    }
    .row-val{
      font-size: 0.75em;
@@ -115,7 +122,7 @@
 
 @media (max-width:820px){
   .attributes{
-    font-size: 1.1em;
+    font-size: 0.7em;
   }
 }
 

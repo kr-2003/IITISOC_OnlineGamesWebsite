@@ -8,11 +8,53 @@
 html, body {
     background-color: #333;
     /* width: 100%; */
-    max-width: 100%; 
+    max-width: 100%;
     overflow-x: hidden;
     padding: 0;
 }
 
+.history-card{
+  background-color: rgb(239, 238, 238);
+  color: black;
+  border-radius: 10px;
+  margin: 10px;
+}
+
+.history-card h3 {
+  text-align: center;
+}
+
+.vs-div{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.vsImage{
+  height: 100px;
+  width: 100px;
+  background-size: auto;
+  overflow: hidden;
+}
+
+.vsImage img{
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+
+.history-card-inner{
+  display: grid;
+  grid-template-columns: 40% 20% 40%;
+  text-align: center;
+}
+
+.history-card-text{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 30px;
+}
 .leader-menu{
   background-color: white;
   width: 130px;
@@ -56,7 +98,7 @@ i{
 #bg_body{
     height: 120vh;
     position: relative;
-    background-image: url("/images/bg-img7.jpg");
+    background-image: url("/images/SecyBg.jpg");
     background-repeat: no-repeat;
     background-size: 100% 100%;
     width: 100vw;
@@ -288,12 +330,10 @@ a {
     /* margin: 7.5% auto; */
   }
 
-.waste{
-  display: inline-block;
-}
-/* .footer{
-  height: 100%;
-} */
+  .waste{
+    display: inline-block;
+  }
+
 /*  .headersss {
     padding-top: 25vh;
     position:relative;
@@ -452,7 +492,7 @@ a {
   }
 .login{
   margin: 15px 0 0 2vw;
-  height: 50px;
+  height: 100%;
 }
 .signup{
   width: 150px;
@@ -480,7 +520,7 @@ a {
 #content{
     color: #a6aeb9;
     font-size: 3.5vh;
-   
+
 }
 #letsplay{
     color: white;
@@ -529,39 +569,40 @@ a {
   display: grid;
   grid-template-columns: repeat(3, 33.33%);
   color: white;
-  /* height: 400px; */
   /* margin-bottom: 40px; */
 }
 #container-mid>div{
-    display: inline-block;
-    /* width: 10vw;
+  display: inline-block;
+    /* display: inline-block;
+    width: 10vw;
     text-align: center;
     margin: 0 7.5vw; */
     /* display: flex; */
+    
     text-align: center;
     align-items: center;
     justify-content: center;
-  }
-  #container-mid>div>p{
+}
+#container-mid>div>p{
     /* font-size: 1.5vw; */
-    /* color: white; */
     color: #FAC213;
     /* float: left; */
     text-align: center;
   }
+
   #container-mid>div>p:hover{
     color: yellow !important;
   }
-#container-mid>div>i{
-  color: white;
-  align-items: center;
-}
-.footer_links{
-  color: inherit;
-}
-.footer_links:hover{
-  color: yellow;
-}
+  #container-mid>div>i{
+    color: white;
+    align-items: center;
+  }
+  .footer_links{
+    color: inherit;
+  }
+  .footer_links:hover{
+    color: yellow;
+  }
 #hr2{
     width: 50%;
     margin-left: 25%;
@@ -694,6 +735,7 @@ input[type=radio] {
   color: inherit;
 }
 
+
 /* Profile Css */
 /*.row{
   background-image: url("/images/gamesbg.png");
@@ -749,11 +791,13 @@ a{
 /* .footer>ul>li{
   display: inline-block;
 } */
+
+
 @media (max-width:1180px) {
   .nav>.nav-links{
       margin: 0;
     }
-  
+
     .card_content{
       font-size: 1.5vw;
     }
@@ -883,13 +927,13 @@ a{
       color: #FAC213;
     }
   #main_container-1{
-    background-image: url("/images/bg-img4.jpeg");
+    background-image: url("/images/SecyBg.jpg");
   }
   .card_content{
     font-size: 2.5vw;
   }
   #bg_body{
-    background-image: url("/images/bg-img4.jpeg");
+    background-image: url("/images/SecyBg.jpg");
   }
 
   body {
