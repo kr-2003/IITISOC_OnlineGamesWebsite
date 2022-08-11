@@ -296,7 +296,8 @@ ul.primary li:hover a {
                       </li>
                       <% } else { %>
                         <li class="nav-item nav-links login">
-                          <a href="/users/<%=currentUser._id%>" class="btn_1 d-sm-block">Hi!, <%= currentUser.username %></a>
+                          <a href="/users/<%=currentUser._id%>" class="btn_1 d-sm-block"><%= currentUser.username %></a>
+                          <!-- <a href="/users/<%=currentUser._id%>" class="btn_1 d-sm-block">Hi!, <%= currentUser.username %></a> -->
                         </li>
                         <li class="nav-item nav-links login signup">
                           <a href="/logout" class="btn_1 d-sm-block">Logout</a>
@@ -342,16 +343,17 @@ ul.primary li:hover a {
       <hr size="5" class="hr" />
       <div id="container-mid">
         <div id="contact">
-          <i style="display: block" class="fa-solid fa-address-card fa-3x center icons"></i><br />
-          <p style="display: block">Contact</p>
+          <i class="fa-solid fa-address-card fa-3x center icons"></i><br />
+          <p><a href="/contact" style="text-decoration: none; color:inherit;">Contact</a></p>
+          <!-- <p style="display: block">Contact</p> -->
         </div>
         <div id="games">
           <i class="fa-solid fa-vr-cardboard fa-3x center icons"></i><br />
-          <p>Games</p>
+          <p><a href="/#redirect" style="text-decoration: none; color:inherit;">Games</a></p>
         </div>
         <div id="reviews">
           <i class="fa-solid fa-headset fa-3x center icons"></i><br />
-          <p>Reviews</p>
+          <p><a href="#" style="text-decoration: none; color:inherit;">Reviews</a></p>
         </div>
       </div>
       <hr size="5" class="hr" id="hr2" />
