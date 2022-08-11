@@ -905,7 +905,7 @@ const history = async (status, game, winner, loser) => {
     winner: winner,
     loser: loser,
   });
-  
+
   await player1.save();
   player2.history.unshift({
     game: game,
@@ -917,12 +917,14 @@ const history = async (status, game, winner, loser) => {
 };
 
 app.get(
-  "/users/:id",
+  "/users/:username",
   catchAsync(async (req, res) => {
-    const { id } = req.params;
-    console.log(id);
-    const user = await User.findById(id).populate({ path: "followers" });
-    console.log(id);
+    const { username } = req.params;
+    // console.log(id);
+    const user = await User.findOne({ 'username': username }).populate({
+      path: "followers",
+    });
+    // console.log(id);
     console.log(user);
     if (!user) {
       req.flash("error", "Cannot find the user!!");
@@ -935,26 +937,27 @@ app.get(
 );
 
 app.get(
-  "/users/:id/follow",
+  "/users/:username/follow",
   catchAsync(async (req, res) => {
-    const { id } = req.params;
-    const user = await User.findById(id);
+    const { username } = req.params;
+    const user = await User.findOne({ username: username });
     if (req.user && user !== req.user.username) {
       user.followers.push(req.user);
     }
     await user.save();
     req.flash("success", "Added a follower!!!");
-    res.redirect(`/users/${id}`);
+    res.redirect(`/users/${username}`);
   })
 );
 
 app.get(
-  "/users/:id/:followerId/unfollow",
+  "/users/:username1/:username2/unfollow",
   catchAsync(async (req, res) => {
-    const { id, followerId } = req.params;
-    await User.findByIdAndUpdate(followerId, { $pull: { followers: id } });
+    const { username1, username2 } = req.params;
+    const userz = await User.findOne({ 'username': username1 });
+    await User.findOneAndUpdate({ 'username': username2 }, { $pull: { followers: userz._id } });
     req.flash("success", "Unfollowed!");
-    res.redirect(`/users/${followerId}`);
+    res.redirect(`/users/${username2}`);
   })
 );
 
@@ -1044,7 +1047,7 @@ app.post(
   "/login",
   passport.authenticate("local", {
     failureFlash: true,
-    failureRedirect: "/",
+    failureRedirect: "/login",
   }),
   catchAsync(async (req, res) => {
     req.flash("success", "Welcome Back!!!");
