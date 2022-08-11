@@ -15,17 +15,17 @@
         <%if(user.username!==currentUser.username) {%> <% for(let follower of
         user.followers){ %> <% if(follower.username===currentUser.username)
         {ans=true}; cnt++; %> <% } %> <% if(ans) {%>
-        <button type="button" class="btn btn-primary">
+        <button type="button" class="btn btn-danger" style=" margin: 5px;">
           <a
-            style="color: white"
-            href="/users/<%=currentUser.id%>/<%=user._id%>/unfollow"
+            style="color: white;"
+            href="/users/<%=currentUser.username%>/<%=user.username%>/unfollow"
             >Unfollow</a
           >
         </button>
 
         <% } else{ %>
-        <button type="button" class="btn btn-primary">
-          <a style="color: white" href="/users/<%=user._id%>/follow">Follow</a>
+        <button type="button" class="btn btn-success" style=" margin: 5px;">
+          <a style="color: white" href="/users/<%=user.username%>/follow">Follow</a>
         </button>
 
         <% } %> <% } %>
@@ -38,9 +38,11 @@
               #b983ff 0%,
               #8a39e1 51%,
               #7a0bc0 100%
+              
             );
-          "
-          class="btn btn-outline-primary ms-1"
+            margin: 5px;"
+          
+          class="btn btn-primary"
         >
           Message
         </button>
@@ -83,7 +85,7 @@
     </div>
   </div>
   <div class="inside--Container">
-    <div class="about-card">
+    <div class="about-card" style="overflow: scroll;">
       <h3 class="heyy" style="text-align: center" style="display: inline-block">
         <span>FOLLOWERS</span>
       </h3>
@@ -92,7 +94,7 @@
         <li
           class="list-group-item d-flex justify-content-between align-items-center p-3"
         >
-          <a class="mb-0" href="/users/<%= follower._id %> "
+          <a class="mb-0" href="/users/<%= follower.username %> " style="color: black; font-size: 20px;"
             ><%= follower.username %>
           </a>
         </li>
@@ -115,7 +117,7 @@
         <% if(game.status==="won") { %>
         <div class="history-card-inner">
           <div class="history-card-text" style="color: rgb(18, 64, 18)">
-            <%=game.winner%>
+            <a href="/users/<%=game.winner%>" style="color: rgb(18, 64, 18)"><%=game.winner%></a>
           </div>
           <div class="vs-div">
             <div class="vsImage">
@@ -123,14 +125,14 @@
             </div>
           </div>
           <div class="history-card-text" style="color: rgb(147, 14, 14)">
-            <%=game.loser%>
+            <a href="/users/<%=game.loser%>" style="color: rgb(147, 14, 14)"><%=game.loser%></a>
           </div>
         </div>
 
         <% } else { %>
         <div class="history-card-inner">
           <div class="history-card-text" style="color: rgb(86, 86, 86)">
-            <%=game.winner%>
+            <a href="/users/<%=game.winner%>" style="color: rgb(86, 86, 86)"><%=game.winner%></a>
           </div>
           <div class="vs-div">
             <div class="vsImage">
@@ -138,7 +140,7 @@
             </div>
           </div>
           <div class="history-card-text" style="color: rgb(86, 86, 86)">
-            <%=game.loser%>
+            <a href="/users/<%=game.loser%>" style="color: rgb(86, 86, 86)"><%=game.loser%></a>
           </div>
         </div>
 
