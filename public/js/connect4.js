@@ -108,7 +108,7 @@ $(function () {
   var xyz = 8
   const vh = Math.max(document.documentElement.clientHeight || 0, window.innerHeight || 0)
   if (abc.matches) {
-    xyz=46
+    xyz=43
   } else {
     xyz=69
   }
