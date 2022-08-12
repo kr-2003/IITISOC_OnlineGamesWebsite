@@ -98,7 +98,7 @@ i{
 #bg_body{
     height: 120vh;
     position: relative;
-    background-image: url("/images/SecyBg.jpg");
+    background-image: url("/images/background04.jpg");
     background-repeat: no-repeat;
     background-size: 100% 100%;
     width: 100vw;
@@ -549,7 +549,7 @@ a {
 
 
 #section2{
-    height: 62vh;
+    height: 66vh;
   }
   #section2>#container-mid>div{
     color: #FAC213 !important;
@@ -621,7 +621,7 @@ a {
     margin-left: 470px;
 }
 .copyright{
-  bottom: 0;
+  /*bottom: 0;*/
   text-align: center;
     /* background-color: #0E1A23; */
     background-color: #2b2c2c;
@@ -820,6 +820,9 @@ a{
     line-height: 60px;
     /* margin: 10px; */
   }
+  #section2{
+    height: 70vh;
+  }
 }
 
 @media(max-width: 928px) {
@@ -843,6 +846,9 @@ a{
   } */
   .mycards{
       height: 50px !important;
+  }
+  #section2{
+    height: 70vh;
   }
 }
 @media (max-width:620px) {
@@ -923,7 +929,7 @@ a{
 
   /* .cot */
   #section2{
-      height: 105vh;
+      height: 115vh;
       color: #FAC213;
     }
   #main_container-1{
@@ -1048,6 +1054,9 @@ body {
   background-color: #333;
   width: 100%;
   overflow-x: hidden;
+}
+#section2{
+  height: 122vh;
 }
 }
 

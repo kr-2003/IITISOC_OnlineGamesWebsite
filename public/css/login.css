@@ -158,3 +158,12 @@ input:focus ~ .border {
     margin-bottom: 5px !important;
   } */
 }
+
+@media (max-width: 560px){
+  #main_container-1{
+    background-image: url("/images/SecyBg.jpg");
+  }
+  #bg_body{
+    background-image: url("/images/SecyBg.jpg");
+  }
+}
