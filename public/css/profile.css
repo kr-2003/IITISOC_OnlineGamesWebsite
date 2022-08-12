@@ -80,6 +80,9 @@ padding-bottom: 160px;
 padding-top: 20px;
 }
 
+.history-card-inner{
+ background-image: linear-gradient(to right, #F1F2F2 0%, #BEBFC2 51%, #A7A9AC 100% );
+}
 @media(max-width: 1344px){
   .about-card{
       font-size: smaller;
