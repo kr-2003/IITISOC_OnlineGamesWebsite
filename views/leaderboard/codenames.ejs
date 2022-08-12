@@ -24,6 +24,10 @@
         color: #fff;
         display: block;
       }
+
+      .row-val > a{
+        color: black !important;
+      }
       
       ul {
         list-style: none;
@@ -260,7 +264,7 @@
                       </li>
                       <% } else { %>
                         <li class="nav-item nav-links login">
-                          <a href="/users/<%=currentUser._id%>" class="btn_1 d-sm-block">Hi!, <%= currentUser.username %></a>
+                          <a href="/users/<%=currentUser.username%>" class="btn_1 d-sm-block">Hi!, <%= currentUser.username %></a>
                         </li>
                         <li class="nav-item nav-links login signup">
                           <a href="/logout" class="btn_1 d-sm-block">Logout</a>
@@ -311,7 +315,11 @@
             <div class="colu-1">
               <div class="attributes">USERNAME</div>
               <% for(let user of leaderboardUsers){ %>
-              <div class="row-val"><%= user.username %></div>
+                <% if(currentUser) {%> 
+                  <div class="row-val"><a href="/users/<%= user.username %>" style="color: black"><%= user.username %></a></div>
+                  <% } else { %> 
+                    <div class="row-val"><%= user.username %></div>
+                <% } %> 
               <% } %>
             </div>
             <div class="colu-1">

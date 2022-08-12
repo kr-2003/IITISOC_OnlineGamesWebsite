@@ -104,11 +104,11 @@ $(function () {
     console.debug(data);
   });
 
-  var abc = window.matchMedia("(max-width: 980px)")
+  var abc = window.matchMedia('(max-width: 980px)')
   var xyz = 8
   const vh = Math.max(document.documentElement.clientHeight || 0, window.innerHeight || 0)
   if (abc.matches) {
-    xyz=49.5
+    xyz=43
   } else {
     xyz=69
   }

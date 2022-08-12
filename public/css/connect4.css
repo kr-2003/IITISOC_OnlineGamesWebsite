@@ -280,35 +280,40 @@ body{
 		height: 20vh;
 	}
 	.opponent_color{
-		width: 7vh;
-		height: 7vh;
+		width: 44.6px;
+		height: 44.6px;
 	}
 	.your_color{
-		width: 7vh;
-		height: 7vh;
+		width: 44.6px;
+		height: 44.6px;
 	}
 	.coin{
-		width: 7vh;
-		height: 7vh;
+		width: 44.6px;
+		height: 44.6px;
 	}
 	.game{
-		width: 50vh;
+		width: 313px;
 	}
 	.board{
-		width: 50vh;
-		height: 43vh;
+		width: 313px;
+		height: 270px;
 	}
 	.layer1{
-		width: 50vh;
+		width: 313px;
 	}
 	.cols{
-		height: 43vh;
+		height: 270px;
 	}
 	.col{
-		width: 7vh !important;
+		width: 44.6px !important;
 	}
 	.status{
 		font-size: 3.5vh;
 		line-height: 6vh;
+	}
+	.game{
+		top: 20vh;
+		left: calc(50vw - 156px);
+		position: absolute;
 	}
 }
