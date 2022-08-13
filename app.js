@@ -107,7 +107,7 @@ passport.use(
     {
       clientID: GOOGLE_CLIENT_ID,
       clientSecret: GOOGLE_CLIENT_SECRET,
-      callbackURL: "https://gamehubiiti.herokuapp.com/auth/google/callback",
+      callbackURL: "https://control-x.herokuapp.com/auth/google/callback",
     },
     function (accessToken, refreshToken, profile, cb) {
       User.findOrCreate(
@@ -921,7 +921,7 @@ app.get(
   catchAsync(async (req, res) => {
     const { username } = req.params;
     // console.log(id);
-    const user = await User.findOne({ 'username': username }).populate({
+    const user = await User.findOne({ username: username }).populate({
       path: "followers",
     });
     // console.log(id);
@@ -954,8 +954,11 @@ app.get(
   "/users/:username1/:username2/unfollow",
   catchAsync(async (req, res) => {
     const { username1, username2 } = req.params;
-    const userz = await User.findOne({ 'username': username1 });
-    await User.findOneAndUpdate({ 'username': username2 }, { $pull: { followers: userz._id } });
+    const userz = await User.findOne({ username: username1 });
+    await User.findOneAndUpdate(
+      { username: username2 },
+      { $pull: { followers: userz._id } }
+    );
     req.flash("success", "Unfollowed!");
     res.redirect(`/users/${username2}`);
   })
