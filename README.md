@@ -1,11 +1,11 @@
 # IITISOC_OnlineGamesWebsite
 https://control-x.herokuapp.com/
 
-##Description
+## Description
 
 Created a responsive Web Application that will host 3 to 4 games. Players will be able to start a new game and invite others to join that game. A user can login/signup and can create an account. After that one is eligible to play 2- player/multiplayer games. These games are written in Javascript and are integrated with the backend. Socket.IO is used to make rooms, shareable links and change turns on client side. After each game history is stored in our database and is being displayed/updated in the profile section. Similarly, leaderboard for each game is being updated in leaderboard section. A user can visit other users' profile by clicking on their name in history or followers or leaderboard section. A user can also follow other users.
 
-##Tech Stack Used
+## Tech Stack Used
 
 * __EJS__-EJS is a simple templating language that lets you generate HTML markup with plain JavaScript.
 
@@ -25,7 +25,7 @@ Created a responsive Web Application that will host 3 to 4 games. Players will b
 
 * __Mongoose__-Mongoose provides a straight-forward, schema-based solution to model your application data. It includes built-in type casting, validation, query building, business logic hooks and more, out of the box.
 
-##How to run on localhost?
+## How to run on localhost?
 
 * Clone this repository to your local machine.
 * Install all the dependencies for this project by running the following command in the terminal.
