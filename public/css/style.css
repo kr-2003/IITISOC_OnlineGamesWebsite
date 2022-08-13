@@ -494,6 +494,7 @@ a {
   /* overflow-x: hidden; */
   overflow-y: hidden;
   width: 150px;
+  line-height: 1.8;
 }
 .signup{
   width: 150px;
